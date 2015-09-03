@@ -1,0 +1,179 @@
+header {
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	color: $primary;
+	border-bottom: 1px solid #ccc;
+	background-color: white;
+	z-index: 1000;
+}
+header .container {
+	height: 100%;
+	position: relative;
+}
+
+
+.logo, .navigation, .menu-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo {
+	display: block;
+	width: 120px;
+	color: $primary;
+	font-family: 'Comfortaa', sans-serif;
+	font-weight: bold;
+	// border: 1px solid black;
+	text-align: center;
+}
+
+.navigation {
+	right: 0;
+	
+	@media(max-width: 770px) {
+		display: none;
+	}
+}
+
+.navigation li {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	margin-left: 5px;
+
+	& a {
+		font-weight: 300;
+		padding: 10px;
+
+		&:link:visited {
+			color: $primary;
+		}
+
+		&:hover {
+			color: #ccc;
+		}
+	}
+	& a.active {
+		border: 1px solid $primary;
+		border-radius: 5px;
+	}
+}
+.menu-btn {
+	right: 0;
+	border-radius: 5px;
+	width: 40px;
+	height: 30px;
+	display: none;
+
+	@media(max-width: 770px) {
+		display: block;
+	}
+
+	& span {
+		display: block;
+		width: 80%;
+		height: 2px;
+		background-color: $primary;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 2px;
+		margin: 0 auto;
+
+		&::after, &::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			border-radius: 2px;
+			background-color: $primary;
+			position: absolute;
+		}
+		&::after {
+			top: 7px;
+		}
+		&::before {
+			top: -7px;
+		}
+	}
+}
+
+.mobile-nav-wrapper,.sticky-nav-wrapper {
+	width: 100%;
+	background-color: white;
+}
+
+.mobile-navigation {
+	display: none;
+}
+
+.sticky-nav-wrapper {
+	position: absolute;
+	top: 10px;
+	height: 60px;
+	width: 70%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	border-radius: 5px;
+	background-color: rgba(255,255,255, 0.5);
+	display: none;
+	z-index: 100;
+
+	&.is-open {
+		display: block;
+
+		@media(max-width: 770px) {
+			display: none;
+		}
+	}
+}
+
+.sticky-navigation {
+	display: none;
+	position: absolute;
+	width: 90%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+
+	& li {
+		display: inline-block;
+		margin: 0 10px;
+	}
+	& li a {
+		padding: 10px;
+		font-weight: 300;
+
+		&.active {
+			border: 1px solid $primary;
+			border-radius: 5px;
+		}
+	}
+}
+
+.mobile-navigation.is-open, .sticky-navigation {
+	display: block;
+	list-style: none;
+	text-align: center;
+	background-color: white;
+}
+
+.sticky-navigation.is-open {
+	background-color: transparent;
+}
+
+.mobile-navigation li a {
+	display: inline-block;
+	padding: 10px;
+	width: 100%;
+	font-weight: 300;
+
+	&:active {
+		background-color: #ccc;
+		color: $primary;
+	}
+}

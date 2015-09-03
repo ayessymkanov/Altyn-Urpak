@@ -1,0 +1,34 @@
+Main page:
+
+	Header:
+		- responsive navigation menu
+		- written logo
+
+	Welcome section:
+		- background-images slider, slogan fixed
+		- place logo somewhere in background-images
+		- slider navigation controls - ???
+
+	Info section:
+		- single-page???
+		- transform: translate
+
+	Blog & News section:
+		- accordion for news, for parents, useful stuff
+		- big section for blog
+
+	Photogallery section:
+		- albums
+
+	Contacts section:
+		-straightforward
+
+	Footer:
+		- name + insta link
+		- credits
+
+More Photos page:
+	-more albums
+
+Blog page:
+	- display all blog entries

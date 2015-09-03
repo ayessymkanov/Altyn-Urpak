@@ -1,0 +1,22 @@
+body {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	font: 16px/100% 'Roboto', sans-serif;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+	height: 100%;
+
+	@media(max-width: 770px) {
+		width: 98%;
+	}
+}
+
+section {
+	width: 100%;
+	min-height: 100vh;
+	background-color: pink;
+}
