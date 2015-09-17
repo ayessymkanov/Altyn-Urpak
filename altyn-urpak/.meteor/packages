@@ -7,3 +7,8 @@
 meteor-platform
 autopublish
 insecure
+iron:router
+sacha:spin
+momentjs:moment
+accounts-password
+accounts-ui
