@@ -3,6 +3,9 @@ Template.admin.helpers({
 		return Posts.find({}, {submitted: -1});
 	},
 	post: function () {
-		return Posts.findOne({});
+		return Posts;
+	},
+	categories: function () {
+		return Categories.find();
 	}
 });

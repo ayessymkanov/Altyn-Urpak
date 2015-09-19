@@ -30,3 +30,11 @@ if (Posts.find().count() === 0) {
 		image: "/img/test.jpg"
 	});
 }
+
+if (Categories.find().count() === 0) {
+	var categories = ['Жаңалықтар', 'Хабарландыру', 'Блабла'];
+	for (var i = 0; i < categories.length; i++)
+		Categories.insert({
+			name: categories[i],
+		});
+}

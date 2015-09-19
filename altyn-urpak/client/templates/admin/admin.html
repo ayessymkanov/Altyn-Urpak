@@ -48,5 +48,34 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="container white">
+			<br/>
+			<p>
+				<strong>Аты</strong>
+				<br/>
+				<input type="text"/>
+			</p>
+			<p>
+				<strong>Категория</strong>
+				<br/>
+					<div class="dropdown">
+					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Таңда
+					  <span class="caret"></span></button>
+					  <ul class="dropdown-menu">
+					  	{{#each categories}}
+					    <li><a href="#">{{this.name}}</a></li>
+					    {{/each}}
+					  </ul>
+					</div>			
+			</p>
+			<p>
+				<strong>Іші</strong>
+				{{#editor key="body"}}
+				{{/editor}}
+			</p>
+			<p>
+				<button type="button" class="btn btn-primary">Сақта</button>
+			</p>
+		</div>
 	</div>
 </template>

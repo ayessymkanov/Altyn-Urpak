@@ -20,6 +20,7 @@ djedi:sanitize-html@1.9.0
 ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
+fortawesome:fontawesome@4.3.0
 geojson-utils@1.0.3
 gwendall:body-events@0.1.6
 html-tools@1.0.4
@@ -35,6 +36,7 @@ iron:location@1.0.9
 iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
+jaredmartin:editor@0.0.3
 jquery@1.11.3_2
 json@1.0.3
 lai:collection-extensions@0.1.4
