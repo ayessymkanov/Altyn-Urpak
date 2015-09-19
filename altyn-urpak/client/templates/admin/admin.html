@@ -42,14 +42,11 @@
 							<td>{{this.category}}</td>
 							<td>{{formatDateFromNow this.submitted}}</td>
 							<td>{{formatDateFromNow this.updated}}</td>
-							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o"></i></a>&nbsp;<a href="#"><i class="fa fa-eye"></i></a></td>
+							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o fa-2"></i></a>&nbsp;<a href="#"><i class="fa fa-eye"></i></a></td>
 						</tr>
 					{{/each}}
 				</tbody>
 			</table>
-		</div>
-		<div class="container white">
-			{{> editableText collection="posts" field="body" wysiwyg=true}}
 		</div>
 	</div>
 </template>
