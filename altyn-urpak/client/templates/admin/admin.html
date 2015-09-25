@@ -1,0 +1,81 @@
+<template name="admin">
+	<style>
+		.back {
+			background-color: #ddd;
+			min-height: 100vh;
+		}
+		.white {
+			background-color: white;
+			box-shadow: 2px 3px 1px #bbb;
+			margin-bottom: 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<div class="back">
+		<div class="container white">
+			<h1>АДМИНИСТРАТОР БЕТІ</h1>
+		</div>
+		<div class="container white">
+			<h3>Жазбалар</h3>
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<a href="#">Қосу&nbsp;<i class="fa fa-plus"></i></a>
+				</div>
+			</div>
+			<table class="table table-stripped table-hover table-condensed center">
+				<thead>
+					<tr>
+						<td>Сурет</td>
+						<td><a href="#">Аты</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
+						<td><a href="#">Категория</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
+						<td><a href="#">Жазылды</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
+						<td><a href="#">Жаңарды</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
+						<td>Әрекет</td>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each posts}}
+						<tr>
+							<td><img src='{{this.image}}' width="50px" height="50px"/></td>
+							<td>{{this.title}}</td>
+							<td>{{this.category}}</td>
+							<td>{{formatDateFromNow this.submitted}}</td>
+							<td>{{formatDateFromNow this.updated}}</td>
+							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o fa-2"></i></a>&nbsp;<a href="#"><i class="fa fa-eye"></i></a></td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="container white">
+			<br/>
+			<p>
+				<strong>Аты</strong>
+				<br/>
+				<input type="text"/>
+			</p>
+			<p>
+				<strong>Категория</strong>
+				<br/>
+					<div class="dropdown">
+					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Таңда
+					  <span class="caret"></span></button>
+					  <ul class="dropdown-menu">
+					  	{{#each categories}}
+					    <li><a href="#">{{this.name}}</a></li>
+					    {{/each}}
+					  </ul>
+					</div>			
+			</p>
+			<p>
+				<strong>Іші</strong>
+				{{#editor key="body"}}
+				{{/editor}}
+			</p>
+			<p>
+				<button type="button" class="btn btn-primary">Сақта</button>
+			</p>
+		</div>
+	</div>
+</template>
