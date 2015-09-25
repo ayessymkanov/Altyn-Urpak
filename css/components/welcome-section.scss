@@ -1,12 +1,115 @@
+@import "../tools/mixins";
+
 .welcome-section {
-	position: relative;
 	width: 100%;
 	height: 100vh;
 	z-index: 1;
+	position: relative;
 }
-.slides {
+
+.slides, .slides__item {
 	width: 100%;
 	height: 100%;
-	background: yellow;
+}
+
+.slides {
+	overflow: hidden;
+	position: relative;
+}
+
+.slides__item {
 	position: absolute;
+	background-size: cover;
+	opacity: 0;
+	transition: all 1s;
+	background-position: center;
+	
+	&:first-child {
+		background-image: url(../img/image1.JPG);
+	}
+
+	&:nth-child(2) {
+		background-image: url(../img/image2.JPG);
+	}
+
+	&:last-child {
+		background-image: url(../img/image1.JPG);
+	}
+}
+
+.slides__item.active {
+	opacity: 1;
+}
+
+.slides__item__title {
+	@include centerer_both;
+	color: white;
+	font-size: 36px;
+	font-family: "Comfortaa";
+	text-align: center;
+	text-shadow: 5px 5px 20px #000;
+
+	@media(max-width: 768px) {
+		font-size: 28px;
+	}
+
+	@media(max-width: 550px) {
+		font-size: 20px;
+	}
+}
+.slides-navigation {
+	@include centerer_h;
+	bottom: 20px;
+	z-index: 2000;
+}
+.slides-navigation__item {
+	display: inline-block;
+	margin-right: 20px;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	border: 3px solid $primary;
+	cursor: pointer;
+
+	&.active {
+		background-color: $primary;
+	}
+}
+
+.show-me {
+	display: block;
+	width: 100px;
+	height: 50px;
+	@include centerer_h;
+	bottom: 50px;
+	cursor: pointer;
+	animation: showMeAnimation 2s infinite;
+
+	&::before, &::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 5px;
+		width: 70px;
+		background-color: $primary;
+		border-radius: 20px;
+	}
+	&::before {
+		transform-origin: center left;
+		transform: rotate(43deg);
+	}
+
+	&::after {
+		left: 30%;
+		transform-origin: center right;
+		transform: rotate(-43deg);
+	}
+}
+
+@keyframes showMeAnimation {
+	50% {
+		transform: translate(-50%, 20px);
+	}
 }

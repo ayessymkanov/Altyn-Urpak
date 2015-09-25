@@ -1,6 +1,13 @@
 @import "tools/sanitize";
 @import "tools/vars";
+@import "tools/mixins";
 @import "tools/base";
+
 
 @import "components/header";
 @import "components/welcome-section";
+@import "components/about-section";
+@import "components/blog-section";
+@import "components/photo-section";
+@import "components/contacts-section";
+@import "components/footer";

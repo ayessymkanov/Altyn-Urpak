@@ -1,0 +1,99 @@
+.about-section {
+	position: relative;
+	background-image: url(../img/kids-pattern.jpg);
+	background-size: contain;
+}
+
+.about-section__wrapper {
+	width: 100%;
+	background-color: rgba(16, 89, 92, 0.9);
+}
+
+.general-container--about {
+	padding: 0 0 50px;
+}
+
+.about-section__title {
+	color: white;
+	font-size: 36px;
+	text-align: center;
+	padding: 25px 0;
+
+	@media(max-width: 768px) {
+		font-size: 28px;
+	}
+	@media(max-width: 550px) {
+		font-size: 24px;
+	}
+}
+
+.about-section__flex-wrapper {
+	@include flex;
+	justify-content: space-between;
+
+	@media(max-width: 768px) {
+		@include flex-wrap(wrap);
+		justify-content: space-around;
+	}
+}
+
+.about-section__flex-wrapper__item {
+	@include flex-basis(250px);
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	background-color: white;
+	padding: 20px;
+	transition: all 0.3s;
+
+	
+
+	&:first-child {
+		color: #E0A212;
+	}
+
+	&:nth-child(2) {
+		color: #8cc7df;
+	}
+
+	&:nth-child(3) {
+		color: #ED5858;
+	}
+
+	&:last-child {
+		color: #60E080;
+	}
+
+	& img {
+		width: 80%;
+		height: 80%;
+
+		@media(max-width: 768px) {
+			width: 50%;
+			height: 50%;
+		}
+	}
+
+	& span {
+		display: block;
+		padding-top: 20px;
+		font-size: 18px;
+		font-weight: bold;
+		text-transform: uppercase;
+
+	}
+
+	&:hover {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	@media(max-width: 768px) {
+		@include flex-basis(300px);
+		margin-bottom: 25px;
+	}
+
+	@media(max-width: 500px) {
+		@include flex-basis(200px);
+	}
+}

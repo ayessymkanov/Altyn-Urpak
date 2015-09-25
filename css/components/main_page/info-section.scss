@@ -1,0 +1,72 @@
+@import "../../tools/mixins";
+
+
+.info-section {
+	text-align: center;
+	background-color: #f9f9f9;
+	background-image: url(../img/kids-pattern.jpg);
+	position: relative;
+	padding: 50px;
+}
+
+.info-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(16, 89, 92, 0.9);
+	z-index: 1;
+}
+
+.info-section-title {
+	font-size: 36px;
+	color: white;
+}
+
+.info-item {
+	z-index: 10;
+	flex-basis: 200px;
+	flex-grow: 1;
+	display: inline-block;
+	color: #8cc7df;
+	border: 3px solid;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 0 20px;
+	background-color: white;
+	transition: all 0.3s;
+
+	@media(max-width: 768px) {
+		flex-basis: 250px;
+		margin: 20px;
+	}
+
+	&:hover {
+		transform: scale(1.1)
+	}
+
+	&:nth-child(2) {
+		color: #339966;
+	}
+	&:nth-child(3) {
+		color: #996699;
+	}
+	&:nth-child(4) {
+		color: #C24747;
+	}
+
+	& img {
+		width: 150px;
+		height: 150px;
+	}
+
+	& span {
+		display: block;
+		padding: 20px 0 0;
+		font-size: 18px;
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 1.5;
+	}
+}
