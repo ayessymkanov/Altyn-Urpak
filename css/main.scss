@@ -1,6 +1,15 @@
 @import "tools/sanitize";
 @import "tools/vars";
+@import "tools/mixins";
 @import "tools/base";
 
-@import "components/header";
-@import "components/welcome-section";
+
+@import "components/main_page/header";
+@import "components/main_page/welcome-section";
+@import "components/main_page/about-section";
+@import "components/main_page/blog-section";
+@import "components/main_page/photo-section";
+@import "components/main_page/contacts-section";
+@import "components/main_page/footer";
+
+@import "components/blog_post/styles";

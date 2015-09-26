@@ -1,0 +1,58 @@
+@import "../../tools/mixins";
+
+.contacts-section {
+	background-image: url(../img/kids-pattern.jpg);
+	background-size: 20%;
+}
+
+.contacts-section-wrapper {
+	padding: 40px 0;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.text-container {
+	@include flex;
+	justify-content: space-around;
+
+	@media(max-width: 550px) {
+		@include flex-wrap(wrap);
+	}
+}
+.text-container__address, .text-container__phone {
+	@include flex-basis(400px);
+	margin-bottom: 20px;
+}
+
+.contact-icon {
+	float: left;
+	width: 20%
+}
+
+.text-holder span {
+	display: block;
+	text-align: center;
+	color: $primary;
+}
+
+.contact-title {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.map {
+	width: 70%;
+	height: 400px;
+	margin: 20px auto;
+
+	& iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media(max-width: 770px) {
+		width: 100%;
+	}
+
+	@media(max-width: 365px) {
+		margin: 0 auto;
+	}
+}

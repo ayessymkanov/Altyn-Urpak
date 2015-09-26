@@ -1,0 +1,23 @@
+.blog-wrapper {
+	display: flex;
+	align-items: flex-start;
+	padding-top: 100px;
+}
+
+.blog-wrapper-child {
+	border: 1px solid red;
+	flex-basis: 300px;
+}
+
+.news-accordion {
+	flex-grow: 1;
+}
+
+.blog-container {
+	flex-grow: 9;
+}
+
+.blog-entry img {
+	width: 350px;
+	height: 220px;
+}
