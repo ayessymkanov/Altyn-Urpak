@@ -25,15 +25,15 @@
 	background-position: center;
 	
 	&:first-child {
-		background-image: url(../img/image1.JPG);
+		background-image: url(../img/slide1.jpg);
 	}
 
 	&:nth-child(2) {
-		background-image: url(../img/image2.JPG);
+		background-image: url(../img/slide2.jpg);
 	}
 
 	&:last-child {
-		background-image: url(../img/image1.JPG);
+		background-image: url(../img/slide3.jpg);
 	}
 }
 

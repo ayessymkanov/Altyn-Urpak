@@ -94,6 +94,13 @@ html {
 		@include flex-grow(1);
 		height: 200px;
 		margin: 20px;
+
+		&:nth-child(odd) {
+			margin-left: 0;
+		}
+		&:nth-child(even) {
+			margin-right: 0;
+		}
 	}
 }
 
