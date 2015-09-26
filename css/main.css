@@ -525,7 +525,8 @@ header {
   text-align: center;
   margin: 0 auto 30px;
   color: white;
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: 300; }
   @media (max-width: 550px) {
     .about-us-passage {
       font-size: 14px; } }
