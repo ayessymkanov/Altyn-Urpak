@@ -45,7 +45,6 @@
 .photo {
 	@include flex-basis(250px);
 	height: 150px;
-	border: 2px solid black;
 	margin-bottom: 20px;
 
 	@media(max-width: 768px) {

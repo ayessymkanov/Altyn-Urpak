@@ -24,13 +24,13 @@ html {
 
 
 
-.blog-post-header {
+.header-not-main {
 	margin-top: 0;
 	position: relative;
 	background-color: white;
 }
 
-.blog-post-logo {
+.logo-not-main {
 	color: $primary;
 	top: 0;
 	@include centerer_h;
@@ -104,7 +104,7 @@ html {
 	}
 }
 
-.blog-post-footer {
+.footer-not-main {
 	width: 100%;
 	position: absolute;
 	bottom: 0;

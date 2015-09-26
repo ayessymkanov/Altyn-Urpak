@@ -97,3 +97,17 @@
 		@include flex-basis(200px);
 	}
 }
+
+.about-us-passage {
+	width: 45em;
+	max-width: 100%;
+	text-align: center;
+	margin: 0 auto 30px;
+	color: white;
+	font-size: 20px;
+	font-weight: 300;
+
+	@media(max-width: 550px) {
+		font-size: 14px;
+	}
+}

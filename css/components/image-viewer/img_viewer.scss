@@ -1,0 +1,111 @@
+@import "../../tools/mixins";
+
+.body-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 1000;
+	display: none;
+}
+
+.image-viewer {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70%;
+	height: 90%;
+	background-color: white;
+	z-index: 2000;
+	object-fit: fill;
+	display: none;
+}
+
+.current-image {
+	width: 90%;
+	@include centerer_both;
+}
+
+.close-btn {
+	position: absolute;
+	right: -60px;
+	top: 0;
+	display: block;
+	width: 40px;
+	height: 40px;
+	// border: 1px solid white;
+	cursor: pointer;
+
+	&::before, &:after {
+		content: "";
+		display: block;
+		width: 120%;
+		height: 10%;
+		background-color: white;
+		position: absolute;
+		top: 50%;
+		transform-origin: center;
+	}
+
+	&::before {
+		transform: rotate(45deg) ;
+	}
+	&::after {
+		transform: rotate(-45deg);
+	}
+}
+
+.left-controller, .right-controller {
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 60px;
+	cursor: pointer;
+}
+
+.left-controller {
+	left: -50px;
+}
+.right-controller {
+	right: -50px;
+}
+
+.left-controller::before, .left-controller::after, 
+.right-controller::before, .right-controller::after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 5px;
+	background-color: white;
+	position: absolute;
+}
+
+.left-controller::before, .left-controller::after {
+	right: 0;
+	transform-origin: right center;
+}
+
+.left-controller::before {
+	transform: rotate(-39deg);
+}
+
+.left-controller::after {
+	top: 100%;
+	transform: rotate(39deg);
+} 
+
+.right-controller::before, .right-controller::after  {
+	transform-origin: left center;
+}
+.right-controller::after {
+	top:100%;
+	transform: rotate(-39.5deg);
+}
+.right-controller::before {
+	transform: rotate(39.5deg);
+}
