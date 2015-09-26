@@ -20,4 +20,8 @@ Router.route('/blog/:_id', {
 	data: function () {
 		return Posts.findOne(this.params._id);
 	},
-})
+});
+
+Router.route('/erekwelikterimiz', {
+	name: 'uniqueness',
+});
