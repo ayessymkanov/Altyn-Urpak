@@ -60,14 +60,6 @@ Template.home.rendered = function () {
 }
 
 Template.home.events({
-	// 'click ul.slides-navigation li': function () {
-	// 	clearInterval(interval);
-	// 	current = $(this).index();
-
-	// 	$slides.eq(current).addClass('active').siblings().removeClass('active');
-	// 	$slidesNavItem.eq(current).addClass('active').siblings().removeClass('active');
-
-	// },
 	'click .menu-btn' : function (e) {
 		var $htmlBody = $('html, body');
 		e.preventDefault();
@@ -110,5 +102,26 @@ Template.home.events({
 	},
 	'click .mobile-navigation > li': function () {
 		$(this).closest('ul').removeClass('is-open');
+	},
+	'click .blog-section-nav__item': function (e) {
+		e.preventDefault();
+		var $entry = $('.entries-holder'), $this = $(e.currentTarget);
+		$($this).addClass('active').siblings().removeClass('active');
+		$entry.eq($($this).index()).addClass('active').siblings().removeClass('active');
 	}
+});
+
+Template.home.helpers({
+	janaliktar: function () {
+		return Posts.find({category: 'Жаңалықтар'}, {added: -1});
+	},
+	'ataanalar': function () {
+		return Posts.find({category: 'Ата-аналар үшін'}, {added: -1});
+	},
+	habarlandyru: function () {
+		return Posts.find({category: 'Хабарландыру'}, {added: -1});
+	},
+	paydaly: function () {
+		return Posts.find({category: 'Пайдалы мәлімет'}, {added: -1});
+	},
 });
