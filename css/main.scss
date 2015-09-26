@@ -4,10 +4,12 @@
 @import "tools/base";
 
 
-@import "components/header";
-@import "components/welcome-section";
-@import "components/about-section";
-@import "components/blog-section";
-@import "components/photo-section";
-@import "components/contacts-section";
-@import "components/footer";
+@import "components/main_page/header";
+@import "components/main_page/welcome-section";
+@import "components/main_page/about-section";
+@import "components/main_page/blog-section";
+@import "components/main_page/photo-section";
+@import "components/main_page/contacts-section";
+@import "components/main_page/footer";
+
+@import "components/blog_post/styles";

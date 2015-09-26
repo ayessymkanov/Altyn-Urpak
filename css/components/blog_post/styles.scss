@@ -1,0 +1,106 @@
+@import "../../tools/mixins";
+
+html {
+	
+}
+
+.blog-post-body {
+	position: relative;
+	padding-bottom: 60px;
+	background-image: url(../img/kids-pattern.jpg);
+	background-attachment: fixed;
+	background-size: 10%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.8);
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.blog-post-header {
+	margin-top: 0;
+	position: relative;
+	background-color: white;
+}
+
+.blog-post-logo {
+	color: $primary;
+	top: 0;
+	@include centerer_h;
+}
+
+.blog-post {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.post-content {
+	position: relative;
+	width: 650px;
+	max-width: 100%;
+	margin: 20px auto;
+	padding-bottom: 20px;
+	z-index: 100;
+	background-color: white;
+	z-index: 100;
+	box-shadow: 1px 1px 5px #ccc;
+}
+
+.blog-post-title {
+	display: block;
+	font: 36px/1.5 "PT serif", Arial;
+	padding: 10px;
+	text-align: center;
+
+	@media(max-width: 768px) {
+		font-size: 28px;
+	}
+	@media(max-width: 550px) {
+		font-size: 20px;
+	}
+}
+
+.post-content p {
+	font: 20px/1.5 "Didact Gothic", Verdana, serif;
+	margin: 0.75em;
+
+	@media(max-width: 768px) {
+		font-size: 16px;
+	}
+	@media(max-width: 550px) {
+		font-size: 14px;
+	}
+}
+
+.blog-post-photos {
+	position: relative;
+	width: 650px;
+	margin: 0 auto;
+	max-width: 100%;
+	z-index: 200;
+	@include flex;
+	@include flex-wrap(wrap);
+	justify-content: space-between;
+
+	& img {
+		@include flex-basis(250px);
+		@include flex-grow(1);
+		height: 200px;
+		margin: 20px;
+	}
+}
+
+.blog-post-footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	z-index: 200;
+}
+
