@@ -19,3 +19,4 @@ cfs:gridfs
 cfs:standard-packages
 tomi:upload-server
 tomi:upload-jquery
+natestrauser:jquery-scrollto

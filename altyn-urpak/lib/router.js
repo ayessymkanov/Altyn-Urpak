@@ -14,3 +14,12 @@ Router.route('/', {
 	// 	return null;
 	// }
 });
+
+
+Router.route('/home', {
+	name: 'home',
+});
+
+Router.route('/blog', {
+	name: 'blog',
+})
