@@ -132,3 +132,19 @@
 		$entry.eq($(this).index()).addClass('active').siblings().removeClass('active');
 	});
 })();
+
+(function() {
+	var $bodyOverlay = $('.body-overlay'),
+		$imageViewer = $('.image-viewer');
+
+	$('img').on('click', function() {
+		$this = $(this);
+		($bodyOverlay).add($imageViewer).fadeIn("fast", function() {
+			$('.current-image').attr("src", $this.attr("src"));
+		});
+	});
+
+	$('.close-btn').add($bodyOverlay).on('click', function() {
+		($bodyOverlay).add($imageViewer).fadeOut("fast");
+	});
+})();

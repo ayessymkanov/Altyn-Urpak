@@ -1,0 +1,56 @@
+@import "../../tools/mixins";
+
+.uniqueness-body {
+	position: relative;
+	padding-bottom: 60px;
+	background-image: url(../img/kids-pattern.jpg);
+	background-attachment: fixed;
+	background-size: 10%;
+	min-height: 100vh;
+}
+
+.uniqueness-content {
+	z-index: 200;
+	position: relative;
+	background-color: white;
+	width: 700px;
+	max-width: 100%;
+	margin: 10px auto;
+	overflow: hidden;
+	padding: 30px 100px;
+}
+
+.uniqueness-title {
+	font-size: 24px;
+	display: block;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.uniqueness-list {
+	list-style: none;
+	counter-reset: my-counter;
+}
+
+.unique-item {
+	counter-increment: my-counter;
+	position: relative;
+	margin: 50px 0;
+	font-size: 20px;
+	color: $primary;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&::before {
+		content: counter(my-counter);
+		font-size: 3em;
+		@include centerer_v;
+		left: -80px;
+	}
+}
