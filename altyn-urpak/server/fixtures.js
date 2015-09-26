@@ -31,6 +31,7 @@ if (Posts.find().count() === 0) {
 	});
 }
 
+
 if (Categories.find().count() === 0) {
 	var categories = ['Жаңалықтар', 'Хабарландыру', 'Блабла'];
 	for (var i = 0; i < categories.length; i++)

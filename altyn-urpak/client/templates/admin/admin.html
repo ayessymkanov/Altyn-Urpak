@@ -15,6 +15,7 @@
 	<div class="back">
 		<div class="container white">
 			<h1>АДМИНИСТРАТОР БЕТІ</h1>
+			{{> loginButtons}}
 		</div>
 		<div class="container white">
 			<h3>Жазбалар</h3>
@@ -42,7 +43,7 @@
 							<td>{{this.category}}</td>
 							<td>{{formatDateFromNow this.submitted}}</td>
 							<td>{{formatDateFromNow this.updated}}</td>
-							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o fa-2"></i></a>&nbsp;<a href="#"><i class="fa fa-eye"></i></a></td>
+							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o fa-2"></i></a></td>
 						</tr>
 					{{/each}}
 				</tbody>
@@ -58,20 +59,19 @@
 			<p>
 				<strong>Категория</strong>
 				<br/>
-					<div class="dropdown">
-					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Таңда
-					  <span class="caret"></span></button>
-					  <ul class="dropdown-menu">
-					  	{{#each categories}}
-					    <li><a href="#">{{this.name}}</a></li>
-					    {{/each}}
-					  </ul>
-					</div>			
+			  	{{#each categories}}
+					<input type="radio" name="category" value="{{this.name}}"> {{this.name}}<br/>
+			    {{/each}}
 			</p>
 			<p>
 				<strong>Іші</strong>
-				{{#editor key="body"}}
-				{{/editor}}
+				<br/>
+				<textarea name="body"></textarea>
+			</p>
+			<p>
+				<strong>Сурет</strong>
+				<br/>
+				{{> upload_bootstrap }}
 			</p>
 			<p>
 				<button type="button" class="btn btn-primary">Сақта</button>

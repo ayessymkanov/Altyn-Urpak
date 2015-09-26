@@ -14,3 +14,8 @@ accounts-password
 accounts-ui
 babrahams:editable-text-wysiwyg
 jaredmartin:editor
+cfs:filesystem
+cfs:gridfs
+cfs:standard-packages
+tomi:upload-server
+tomi:upload-jquery
