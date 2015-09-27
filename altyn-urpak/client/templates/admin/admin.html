@@ -17,65 +17,76 @@
 			<h1>АДМИНИСТРАТОР БЕТІ</h1>
 			{{> loginButtons}}
 		</div>
+		{{#if equals user_email "abzal.serekov@gmail.com"}}
 		<div class="container white">
 			<h3>Жазбалар</h3>
-			<div class="row">
-				<div class="col-md-12 text-right">
-					<a href="#">Қосу&nbsp;<i class="fa fa-plus"></i></a>
-				</div>
-			</div>
 			<table class="table table-stripped table-hover table-condensed center">
 				<thead>
 					<tr>
-						<td>Сурет</td>
 						<td><a href="#">Аты</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
 						<td><a href="#">Категория</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
 						<td><a href="#">Жазылды</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
-						<td><a href="#">Жаңарды</a>&nbsp;<i class="fa fa-sort-alpha-asc"></i></td>
 						<td>Әрекет</td>
 					</tr>
 				</thead>
 				<tbody>
 					{{#each posts}}
 						<tr>
-							<td><img src='{{this.image}}' width="50px" height="50px"/></td>
 							<td>{{this.title}}</td>
 							<td>{{this.category}}</td>
-							<td>{{formatDateFromNow this.submitted}}</td>
-							<td>{{formatDateFromNow this.updated}}</td>
-							<td><a href="#"><i class="fa fa-pencil"></i></a>&nbsp;<a href="#"><i class="fa fa-trash-o fa-2"></i></a></td>
+							<td>{{formatDateFromNow this.added}}</td>
+							<td><a href="#" class="remove" id="{{this._id}}"><i class="fa fa-trash-o fa-2"></i></a></td>
 						</tr>
 					{{/each}}
 				</tbody>
 			</table>
 		</div>
 		<div class="container white">
-			<br/>
-			<p>
-				<strong>Аты</strong>
-				<br/>
-				<input type="text"/>
-			</p>
-			<p>
-				<strong>Категория</strong>
-				<br/>
-			  	{{#each categories}}
-					<input type="radio" name="category" value="{{this.name}}"> {{this.name}}<br/>
-			    {{/each}}
-			</p>
-			<p>
-				<strong>Іші</strong>
-				<br/>
-				<textarea name="body"></textarea>
-			</p>
-			<p>
-				<strong>Сурет</strong>
-				<br/>
-				{{> upload_bootstrap }}
-			</p>
-			<p>
-				<button type="button" class="btn btn-primary">Сақта</button>
-			</p>
+			<h3>Жаңа жазба</h3>
+			<div class="row">
+				<div class="col-md-8">
+					<br/>
+					<p>
+						<strong>Аты</strong>
+						<br/>
+						<input type="text" id="title"/>
+					</p>
+					<p>
+						<strong>Категория</strong>
+						<br/>
+					  	{{#each categories}}
+							<input type="checkbox" name="category" value="{{this.name}}"> {{this.name}}<br/>
+					    {{/each}}
+					</p>
+					<p>
+						<strong>Іші</strong>
+						<br/>
+						<textarea name="body" id = "body" style="width: 300px; height: 150px;"></textarea>
+					</p>
+					<p>
+						<p id="photkalar">
+							<input name="photo_src" type="file" id="sell-item-img" class="myFileInput">
+						</p>
+						<a href="#" id="more-img">Тағы фотка</a>
+					</p>
+					<p>
+						<button type="button" id="save" class="btn btn-primary">Сақта</button>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h5>Ережелер</h5>
+					<p class="lead">
+					Жаңа параграф үшін оны &lt;p&gt; және &lt;/p&gt; ішіне жазыңыз 
+					</p>
+					<p class="lead">
+					Сөзді <b>толық</b> қылу үшін оны &lt;b&gt; және &lt;/b&gt; ішіне жазыңыз 
+					</p>
+					<p class="lead">
+					Сөзді <i>бұрып</i> жазғыңыз келсе оны &lt;i&gt; және &lt;/i&gt; ішіне жазыңыз 
+					</p>
+				</div>
+			</div>
 		</div>
+		{{/if}}
 	</div>
 </template>

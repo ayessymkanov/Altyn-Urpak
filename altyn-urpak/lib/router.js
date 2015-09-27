@@ -6,20 +6,22 @@ Router.configure({
 
 var ADMIN_EMAIL = ["abzal.serekov@gmail.com"];
 
-Router.route('/', {
+Router.route('/admin', {
 	name: 'admin',
-	// waitOn: function () {
-	// 	if (Meteor.user() && ADMIN_EMAIL.indexOf(Meteor.user().emails[0].address) >= 0) 
-	// 		return Meteor.subscribe('subscribers');
-	// 	return null;
-	// }
 });
 
 
-Router.route('/home', {
+Router.route('/', {
 	name: 'home',
 });
 
-Router.route('/blog', {
+Router.route('/blog/:_id', {
 	name: 'blog',
-})
+	data: function () {
+		return Posts.findOne(this.params._id);
+	},
+});
+
+Router.route('/erekwelikterimiz', {
+	name: 'uniqueness',
+});
