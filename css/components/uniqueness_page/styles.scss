@@ -1,6 +1,6 @@
 @import "../../tools/mixins";
 
-.uniqueness-body {
+.custom-body {
 	position: relative;
 	padding-bottom: 60px;
 	background-image: url(../img/kids-pattern.jpg);
@@ -9,34 +9,43 @@
 	min-height: 100vh;
 }
 
-.uniqueness-content {
+.custom-content {
 	z-index: 200;
 	position: relative;
-	background-color: white;
-	width: 700px;
+	width: 900px;
 	max-width: 100%;
 	margin: 10px auto;
 	overflow: hidden;
-	padding: 30px 100px;
+	padding: 30px ;
+	@include flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-items: -webkit-flex-start;
+
+	@media(max-width: 550px) {
+		justify-content: center;
+	}
 }
 
-.uniqueness-title {
+.custom-title {
 	font-size: 24px;
 	display: block;
 	padding-bottom: 20px;
 	text-align: center;
 }
 
-.uniqueness-list {
+.custom-list {
 	list-style: none;
 	counter-reset: my-counter;
+	@include flex-grow(1);
+	margin-left: 100px;
 }
 
-.unique-item {
+.custom-item {
 	counter-increment: my-counter;
 	position: relative;
 	margin: 50px 0;
-	font-size: 20px;
+	font-weight: 700;
 	color: $primary;
 
 	&:first-child {
@@ -53,4 +62,35 @@
 		@include centerer_v;
 		left: -80px;
 	}
+}
+
+.custom-icon {
+
+	margin-right: 50px;
+	text-align: center;
+	color: #E0A212;
+	border: 3px solid;
+	border-radius: 10px;
+	padding: 20px;
+	height: 200px;
+	background-color: white;
+
+	& img {
+		height: 80%;
+	}
+
+	& span {
+		display: block;
+		margin-top: 10px;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	@media(max-width: 700px) {
+		display: none;
+	}
+}
+
+.custom-content__item {
+	@include flex-basis(200px);
 }

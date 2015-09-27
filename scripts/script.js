@@ -24,11 +24,16 @@
 	if(scroll > $welcomeSection / 2) {
 		$sideNavItem.eq(0).addClass('active').siblings().removeClass('active');
 		$sideNavItem.css({
-			// "background-color": "#68238e",
-			"color": "#fff"
+			"border-color": "white"
 		});
+		$(".side-navigation__item.active").css({
+			"background-color": "white"
+		})
 	} if(scroll > $aboutSection + $welcomeSection - 100) {
 		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
+		$sideNavItem.css({
+			"border-color": "#68238e"
+		});
 	} if(scroll >$blogSection + $aboutSection + $welcomeSection - 100) {
 		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
 	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
@@ -84,6 +89,8 @@
 })();
 
 
+//Site Navigation - scrolling 
+
 (function() {
 
 	var $htmlBody = $('html, body');
@@ -122,6 +129,8 @@
 })();
 
 
+//Blog-news section menu
+
 (function() {
 
 	var $entry = $('.entries-holder');
@@ -133,18 +142,42 @@
 	});
 })();
 
+
+//Image viewer
+
 (function() {
 	var $bodyOverlay = $('.body-overlay'),
-		$imageViewer = $('.image-viewer');
+		$imageViewer = $('.image-viewer'),
+		selectedImgIndex,
+		$imgLength = $(".photos-wrapper--general .photo-view").length,
+		$currentImage = $('.current-image');
 
-	$('img').on('click', function() {
+	$('.photo-view').on('click', function() {
 		$this = $(this);
-		($bodyOverlay).add($imageViewer).fadeIn("fast", function() {
-			$('.current-image').attr("src", $this.attr("src"));
+		selectedImgIndex = $this.index();
+		$bodyOverlay.add($imageViewer).fadeIn("fast", function() {
+			$currentImage.attr("src", $this.attr("src"));
 		});
 	});
 
+	$('.left-controller').on('click', function() {
+		$currentImage.attr("src", $('.photo-view').eq(selectedImgIndex - 1)[0].src);
+		selectedImgIndex--;
+		if(selectedImgIndex === 0) {
+			selectedImgIndex = $imgLength - 1;
+		}
+	});
+
+	$('.right-controller').add($currentImage).on('click', function() {
+		$currentImage.attr("src", $('.photo-view').eq(selectedImgIndex + 1)[0].src);
+		selectedImgIndex++;
+		if(selectedImgIndex === $imgLength - 1) {
+			selectedImgIndex = 0;
+		}
+	});
+
 	$('.close-btn').add($bodyOverlay).on('click', function() {
-		($bodyOverlay).add($imageViewer).fadeOut("fast");
+		$bodyOverlay.add($imageViewer).fadeOut("fast");
+		$currentImage.attr("src", "");
 	});
 })();
