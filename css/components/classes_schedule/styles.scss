@@ -25,6 +25,14 @@ th {
 	background-color: #ccc;
 }
 
+.mobile-title {
+	display: none;
+
+	@media(max-width: 550px) {
+		display: inline;
+	}
+}
+
 
 
 
