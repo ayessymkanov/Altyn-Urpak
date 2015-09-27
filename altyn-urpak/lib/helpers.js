@@ -13,7 +13,7 @@ moment.locale('kz', {
         LLLL : "dddd D MMMM YYYY LT"
     },
     calendar : {
-        sameDay: "[Бүшін] LT",
+        sameDay: "[Бүгін] LT",
         nextDay: '[Ертең] LT',
         nextWeek: '[Келесі] dddd LT',
         lastDay: '[Кеше] LT',
