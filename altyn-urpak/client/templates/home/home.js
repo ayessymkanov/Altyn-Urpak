@@ -1,41 +1,49 @@
 Template.home.rendered = function () {
+	$("body").removeClass("custom-body");
+	$("footer").removeClass("footer-not-main").addClass("footer-wraper");
+
 	$(window).scroll(function() {
 
-		var $sideNav = $('.side-navigation');
+	var $sideNav = $('.side-navigation');
 
-		var scroll = $(this).scrollTop();
+	var scroll = $(this).scrollTop();
 
-		var vh = $(this).height();
-		
-		if(scroll > vh / 2) {
-			$sideNav.addClass('seen');
-		} else {
-			$sideNav.removeClass('seen');
-		}
+	var vh = $(this).height();
+	
+	if(scroll > vh / 2) {
+		$sideNav.addClass('seen');
+	} else {
+		$sideNav.removeClass('seen');
+	}
 
-		var $welcomeSection = $('.welcome-section').height(),
-			$aboutSection = $('.about-section').height(),
-			$blogSection = $('.blog-section').height(),
-			$photoSection = $('.photo-section').height(),
-			$contactsSection = $('.contacts-section').height();
+	var $welcomeSection = $('.welcome-section').height(),
+		$aboutSection = $('.about-section').height(),
+		$blogSection = $('.blog-section').height(),
+		$photoSection = $('.photo-section').height(),
+		$contactsSection = $('.contacts-section').height();
 
-		var $sideNavItem = $('.side-navigation__item');
+	var $sideNavItem = $('.side-navigation__item');
 
-		if(scroll > $welcomeSection / 2) {
-			$sideNavItem.eq(0).addClass('active').siblings().removeClass('active');
-			$sideNavItem.css({
-				// "background-color": "#68238e",
-				"color": "#fff"
-			});
-		} if(scroll > $aboutSection + $welcomeSection - 100) {
-			$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
-		} if(scroll >$blogSection + $aboutSection + $welcomeSection - 100) {
-			$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
-		} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
-			$sideNavItem.eq(3).addClass('active').siblings().removeClass('active');
-		}
+	if(scroll > $welcomeSection / 2) {
+		$sideNavItem.eq(0).addClass('active').siblings().removeClass('active');
+		$sideNavItem.css({
+			"border-color": "white"
+		});
+		$(".side-navigation__item.active").css({
+			"background-color": "white"
+		})
+	} if(scroll > $aboutSection + $welcomeSection - 100) {
+		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
+		$sideNavItem.css({
+			"border-color": "#68238e"
+		});
+	} if(scroll >$blogSection + $aboutSection + $welcomeSection - 100) {
+		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
+	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
+		$sideNavItem.eq(3).addClass('active').siblings().removeClass('active');
+	}
 
-	});
+});
 
 	var $slides = $('ul.slides li');
 	var $slidesNavItem = $('ul.slides-navigation li');
