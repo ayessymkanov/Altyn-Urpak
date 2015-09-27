@@ -1,6 +1,6 @@
 Template.admin.helpers({
 	posts: function () {
-		return Posts.find({}, {submitted: -1});
+		return Posts.find({}, {sort: {added: -1}});
 	},
 	post: function () {
 		return Posts;
@@ -18,6 +18,10 @@ Template.admin.helpers({
     }
 });
 
+Template.admin.rendered = function () {
+	$("body").removeClass("custom-body").removeClass("blog-post-body");
+	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wrapper");
+};
 
 Template.admin.created = function () {
 	// $("input:radio[name='category']").change(function () {

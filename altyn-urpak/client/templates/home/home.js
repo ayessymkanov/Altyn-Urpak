@@ -1,6 +1,6 @@
 Template.home.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
-	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wraper");
+	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wrapper");
 
 	$(window).scroll(function() {
 
@@ -128,15 +128,15 @@ Template.home.events({
 
 Template.home.helpers({
 	janaliktar: function () {
-		return Posts.find({category: 'Жаңалықтар'}, {added: -1});
+		return Posts.find({category: 'Жаңалықтар'}, {sort: {added: -1}});
 	},
 	'ataanalar': function () {
-		return Posts.find({category: 'Ата-аналар үшін'}, {added: -1});
+		return Posts.find({category: 'Ата-аналар үшін'}, {sort: {added: -1}});
 	},
 	habarlandyru: function () {
-		return Posts.find({category: 'Хабарландыру'}, {added: -1});
+		return Posts.find({category: 'Хабарландыру'}, {sort: {added: -1}});
 	},
 	paydaly: function () {
-		return Posts.find({category: 'Пайдалы мәлімет'}, {added: -1});
+		return Posts.find({category: 'Пайдалы мәлімет'}, {sort: {added: -1}});
 	},
 });
