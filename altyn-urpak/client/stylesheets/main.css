@@ -419,6 +419,7 @@ header {
   transform: translateX(-50%);
   bottom: 50px;
   cursor: pointer;
+  -webkit-animation: showMeAnimation 2s infinite;
   animation: showMeAnimation 2s infinite; }
   .show-me::before, .show-me::after {
     content: "";
@@ -431,15 +432,30 @@ header {
     background-color: #68238e;
     border-radius: 20px; }
   .show-me::before {
-    transform-origin: center left;
+    -webkit-transform-origin: center left;
+    -webkit-transform-origin: center left;
+    -webkit-transform: rotate(43deg);
     transform: rotate(43deg); }
   .show-me::after {
     left: 30%;
+    -webkit-transform-origin: center right;
     transform-origin: center right;
+    -webkit-transform: rotate(-43deg);
     transform: rotate(-43deg); }
+
+@-webkit-keyframes showMeAnimation {
+  50% {
+    -webkit-transform: translate(-50%, 20px);
+    transform: translate(-50%, 20px); } }
+
+@-moz-keyframes showMeAnimation {
+  50% {
+    -webkit-transform: translate(-50%, 20px);
+    transform: translate(-50%, 20px); } }
 
 @keyframes showMeAnimation {
   50% {
+    -webkit-transform: translate(-50%, 20px);
     transform: translate(-50%, 20px); } }
 
 .about-section {
@@ -663,6 +679,7 @@ header {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: -webkit-space-between;
   justify-content: space-between;
   align-content: center; }
   @media (max-width: 768px) {
@@ -867,16 +884,22 @@ footer {
   position: fixed;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 70%;
   height: 90%;
   background-color: white;
   z-index: 2000;
-  object-fit: fill;
+  object-fit: cover;
   display: none; }
+  @media (max-width: 550px) {
+    .image-viewer {
+      width: 100%;
+      height: 50%; } }
 
 .current-image {
   width: 90%;
+  height: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -891,6 +914,9 @@ footer {
   width: 40px;
   height: 40px;
   cursor: pointer; }
+  @media (max-width: 550px) {
+    .close-btn {
+      background-color: #68238e; } }
   .close-btn::before, .close-btn:after {
     content: "";
     display: block;
@@ -899,20 +925,29 @@ footer {
     background-color: white;
     position: absolute;
     top: 50%;
+    -webkit-transform-origin: center;
     transform-origin: center; }
+    @media (max-width: 550px) {
+      .close-btn::before, .close-btn:after {
+        background-color: #68238e; } }
   .close-btn::before {
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .close-btn::after {
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
 .left-controller, .right-controller {
   display: block;
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 40px;
   height: 60px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 3000;
+  background-color: #68238e; }
 
 .left-controller {
   left: -50px; }
@@ -927,27 +962,35 @@ footer {
   width: 50px;
   height: 5px;
   background-color: white;
-  position: absolute; }
+  position: absolute;
+  border-radius: 5px;
+  z-index: 3000; }
 
 .left-controller::before, .left-controller::after {
   right: 0;
+  -webkit-transform-origin: right center;
   transform-origin: right center; }
 
 .left-controller::before {
+  -webkit-transform: rotate(-39deg);
   transform: rotate(-39deg); }
 
 .left-controller::after {
   top: 100%;
+  -webkit-transform: rotate(39deg);
   transform: rotate(39deg); }
 
 .right-controller::before, .right-controller::after {
+  -webkit-transform-origin: left center;
   transform-origin: left center; }
 
 .right-controller::after {
   top: 100%;
+  -webkit-transform: rotate(-39.5deg);
   transform: rotate(-39.5deg); }
 
 .right-controller::before {
+  -webkit-transform: rotate(39.5deg);
   transform: rotate(39.5deg); }
 
 .custom-body {
