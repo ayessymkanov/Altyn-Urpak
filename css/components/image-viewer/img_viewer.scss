@@ -15,17 +15,24 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	width: 70%;
 	height: 90%;
 	background-color: white;
 	z-index: 2000;
-	object-fit: fill;
+	object-fit: cover;
 	display: none;
+
+	@media(max-width: 550px) {
+		width: 100%;
+		height: 50%;
+	}
 }
 
 .current-image {
 	width: 90%;
+	height: 90%;
 	@include centerer_both;
 }
 
@@ -39,6 +46,10 @@
 	// border: 1px solid white;
 	cursor: pointer;
 
+	@media(max-width: 550px) {
+		background-color: $primary;
+	}
+
 	&::before, &:after {
 		content: "";
 		display: block;
@@ -47,13 +58,20 @@
 		background-color: white;
 		position: absolute;
 		top: 50%;
+		-webkit-transform-origin: center;
 		transform-origin: center;
+
+		@media(max-width: 550px) {
+			background-color: $primary;
+		}
 	}
 
 	&::before {
+		-webkit-transform: rotate(45deg) ;
 		transform: rotate(45deg) ;
 	}
 	&::after {
+		-webkit-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 	}
 }
@@ -62,10 +80,13 @@
 	display: block;
 	position: absolute;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	width: 40px;
 	height: 60px;
 	cursor: pointer;
+	z-index: 3000;
+	background-color: $primary;
 }
 
 .left-controller {
@@ -83,29 +104,38 @@
 	height: 5px;
 	background-color: white;
 	position: absolute;
+	border-radius: 5px;
+
+	z-index: 3000;
 }
 
 .left-controller::before, .left-controller::after {
 	right: 0;
+	-webkit-transform-origin: right center;
 	transform-origin: right center;
 }
 
 .left-controller::before {
+	-webkit-transform: rotate(-39deg);
 	transform: rotate(-39deg);
 }
 
 .left-controller::after {
 	top: 100%;
+	-webkit-transform: rotate(39deg);
 	transform: rotate(39deg);
 } 
 
 .right-controller::before, .right-controller::after  {
+	-webkit-transform-origin: left center;
 	transform-origin: left center;
 }
 .right-controller::after {
 	top:100%;
+	-webkit-transform: rotate(-39.5deg);
 	transform: rotate(-39.5deg);
 }
 .right-controller::before {
+	-webkit-transform: rotate(39.5deg);
 	transform: rotate(39.5deg);
 }

@@ -84,6 +84,7 @@
 	@include centerer_h;
 	bottom: 50px;
 	cursor: pointer;
+	-webkit-animation: showMeAnimation 2s infinite;
 	animation: showMeAnimation 2s infinite;
 
 	&::before, &::after {
@@ -98,19 +99,40 @@
 		border-radius: 20px;
 	}
 	&::before {
-		transform-origin: center left;
+		-webkit-transform-origin: center left;
+		-webkit-transform-origin: center left;
+		-webkit-transform: rotate(43deg);
 		transform: rotate(43deg);
 	}
 
 	&::after {
 		left: 30%;
+		-webkit-transform-origin: center right;
 		transform-origin: center right;
+		-webkit-transform: rotate(-43deg);
 		transform: rotate(-43deg);
 	}
 }
 
+@-webkit-keyframes showMeAnimation {
+	50% {
+		-webkit-transform: translate(-50%, 20px);
+		transform: translate(-50%, 20px);
+	}
+}
+
+@-moz-keyframes showMeAnimation {
+	50% {
+		-webkit-transform: translate(-50%, 20px);
+		transform: translate(-50%, 20px);
+	}
+}
+
+
+
 @keyframes showMeAnimation {
 	50% {
+		-webkit-transform: translate(-50%, 20px);
 		transform: translate(-50%, 20px);
 	}
 }

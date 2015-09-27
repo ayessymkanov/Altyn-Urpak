@@ -34,6 +34,7 @@
 .photos-wrapper {
 	@include flex;
 	@include flex-wrap(wrap);
+	justify-content: -webkit-space-between;
 	justify-content: space-between;
 	align-content: center;
 
