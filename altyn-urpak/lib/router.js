@@ -33,3 +33,7 @@ Router.route('/kyzmetterimiz', {
 Router.route('/kun-tartibi', {
 	name: 'timetable',
 });
+
+Router.route('/sabak-kestesi', {
+	name: 'schedule',
+});

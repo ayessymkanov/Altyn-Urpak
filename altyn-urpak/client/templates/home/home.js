@@ -1,6 +1,6 @@
 Template.home.rendered = function () {
-	$("body").removeClass("custom-body");
-	$("footer").removeClass("footer-not-main").addClass("footer-wraper");
+	$("body").removeClass("custom-body").removeClass("blog-post-body");
+	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wrapper");
 
 	$(window).scroll(function() {
 
@@ -111,25 +111,32 @@ Template.home.events({
 	'click .mobile-navigation > li': function () {
 		$(this).closest('ul').removeClass('is-open');
 	},
-	'click .blog-section-nav__item': function (e) {
+	'click .js-blog-section-nav__item': function (e) {
 		e.preventDefault();
 		var $entry = $('.entries-holder'), $this = $(e.currentTarget);
 		$($this).addClass('active').siblings().removeClass('active');
 		$entry.eq($($this).index()).addClass('active').siblings().removeClass('active');
+	},
+	'click .js-schedule-nav-item': function (e) {
+		e.preventDefault();
+		var $this = $(e.currentTarget);
+		$this.addClass('active').siblings().removeClass('active');
+		$("."+$this.data("table")).addClass("active").siblings("table").removeClass("active");
+
 	}
 });
 
 Template.home.helpers({
 	janaliktar: function () {
-		return Posts.find({category: 'Жаңалықтар'}, {added: -1});
+		return Posts.find({category: 'Жаңалықтар'}, {sort: {added: -1}});
 	},
 	'ataanalar': function () {
-		return Posts.find({category: 'Ата-аналар үшін'}, {added: -1});
+		return Posts.find({category: 'Ата-аналар үшін'}, {sort: {added: -1}});
 	},
 	habarlandyru: function () {
-		return Posts.find({category: 'Хабарландыру'}, {added: -1});
+		return Posts.find({category: 'Хабарландыру'}, {sort: {added: -1}});
 	},
 	paydaly: function () {
-		return Posts.find({category: 'Пайдалы мәлімет'}, {added: -1});
+		return Posts.find({category: 'Пайдалы мәлімет'}, {sort: {added: -1}});
 	},
 });

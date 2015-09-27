@@ -1,5 +1,10 @@
 <template name="blog">
 
+	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic|PT+Serif&subset=cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
+
+
 	<header class="header-not-main">
 		<div class="general-container general-container--header">
 			<a href="{{pathFor 'home'}}" class="logo logo-not-main">"Алтын Ұрпақ" <br> балабақшасы</a>
@@ -15,9 +20,20 @@
 	</section>
 
 	<section class="blog-post-photos">
+	</section>
+
+	<section class="blog-post-photos photos-wrapper--general">
 		{{#each imgs}}
-			<img src="{{this}}" alt=""/>
+			<img src="{{this}}" alt="" class="photo-view" />
 		{{/each}}
 	</section>
+
+	<div class="body-overlay"></div>
+	<div class="image-viewer">
+		<img src="" alt="" class="current-image">
+		<span class="close-btn"></span>
+		<span class="left-controller"></span>
+		<span class="right-controller"></span>
+	</div>
 
 </template>
