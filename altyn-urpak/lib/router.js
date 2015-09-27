@@ -22,6 +22,14 @@ Router.route('/blog/:_id', {
 	},
 });
 
-Router.route('/erekwelikterimiz', {
+Router.route('/erekshelikterimiz', {
 	name: 'uniqueness',
+});
+
+Router.route('/kyzmetterimiz', {
+	name: 'services',
+});
+
+Router.route('/kun-tartibi', {
+	name: 'timetable',
 });
