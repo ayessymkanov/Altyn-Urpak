@@ -11,6 +11,11 @@ table {
 	border-collapse: collapse;
 	margin: 20px 0;
 	position: relative;
+	display: none;
+}
+
+table.active {
+	display: table;
 }
 
 

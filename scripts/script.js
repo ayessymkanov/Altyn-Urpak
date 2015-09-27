@@ -135,7 +135,7 @@
 
 	var $entry = $('.entries-holder');
 
-	$('.blog-section-nav__item').on('click', function(e) {
+	$('.js-blog-section-nav__item').on('click', function(e) {
 		e.preventDefault();
 		$(this).addClass('active').siblings().removeClass('active');
 		$entry.eq($(this).index()).addClass('active').siblings().removeClass('active');
@@ -179,5 +179,15 @@
 	$('.close-btn').add($bodyOverlay).on('click', function() {
 		$bodyOverlay.add($imageViewer).fadeOut("fast");
 		$currentImage.attr("src", "");
+	});
+})();
+
+(function() {
+	$('.js-schedule-nav-item').on("click", function(e) {
+		e.preventDefault();
+
+		$(this).addClass('active').siblings().removeClass('active');
+
+		$("."+$(this).data("table")).addClass("active").siblings("table").removeClass("active");
 	});
 })();

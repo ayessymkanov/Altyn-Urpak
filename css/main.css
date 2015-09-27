@@ -1073,7 +1073,11 @@ table {
   border: 1px solid black;
   border-collapse: collapse;
   margin: 20px 0;
-  position: relative; }
+  position: relative;
+  display: none; }
+
+table.active {
+  display: table; }
 
 th, td {
   border: 1px solid #999;
