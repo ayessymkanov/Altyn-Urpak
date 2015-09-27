@@ -21,6 +21,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	align-items: -webkit-flex-start;
+	background-color: rgba(255,255,255,0.6);
 
 	@media(max-width: 550px) {
 		justify-content: center;
@@ -65,7 +66,6 @@
 }
 
 .custom-icon {
-
 	margin-right: 50px;
 	text-align: center;
 	color: #E0A212;

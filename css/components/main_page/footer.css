@@ -1,6 +1,7 @@
 footer {
   background-image: url(../img/kids-pattern.jpg);
-  background-size: 20%; }
+  background-size: 20%;
+  font-weight: 700; }
   @media (max-width: 768px) {
     footer {
       text-align: center; } }

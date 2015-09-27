@@ -741,7 +741,8 @@ header {
 
 footer {
   background-image: url(../img/kids-pattern.jpg);
-  background-size: 20%; }
+  background-size: 20%;
+  font-weight: 700; }
   @media (max-width: 768px) {
     footer {
       text-align: center; } }
@@ -756,7 +757,8 @@ footer {
   padding-bottom: 60px;
   background-image: url(../img/kids-pattern.jpg);
   background-attachment: fixed;
-  background-size: 10%; }
+  background-size: 10%;
+  min-height: 100vh; }
 
 .overlay {
   position: absolute;
@@ -781,7 +783,6 @@ footer {
   transform: translateX(-50%); }
 
 .blog-post {
-  min-height: 100vh;
   width: 100%; }
 
 .post-content {
@@ -837,8 +838,14 @@ footer {
     margin: 20px; }
     .blog-post-photos img:nth-child(odd) {
       margin-left: 0; }
+      @media (max-width: 550px) {
+        .blog-post-photos img:nth-child(odd) {
+          margin-left: 20px; } }
     .blog-post-photos img:nth-child(even) {
       margin-right: 0; }
+      @media (max-width: 550px) {
+        .blog-post-photos img:nth-child(even) {
+          margin-right: 20px; } }
 
 .footer-not-main {
   width: 100%;
@@ -963,7 +970,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  align-items: -webkit-flex-start; }
+  align-items: -webkit-flex-start;
+  background-color: rgba(255, 255, 255, 0.6); }
   @media (max-width: 550px) {
     .custom-content {
       justify-content: center; } }
@@ -1055,3 +1063,23 @@ footer {
 
 .custom-item--services {
   color: #8cc7df; }
+
+.schedule-section {
+  position: relative;
+  z-index: 200; }
+
+table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 20px 0;
+  position: relative; }
+
+th, td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: white; }
+
+th {
+  background-color: #ccc; }

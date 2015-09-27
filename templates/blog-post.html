@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Блог пост| Алтын Ұрпақ балабақшасы</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="../css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic|PT+Serif&subset=cyrillic-ext' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/png" href="img/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="../img/icons/favicon.ico" />
 </head>
 <body class="blog-post-body">
 	
@@ -30,14 +30,22 @@
 			</div>
 		</section>
 
-		<section class="blog-post-photos">
-			<img src="img/image1.JPG" alt="">
-			<img src="img/image2.JPG" alt="">
-			<img src="img/image1.JPG" alt="">
-			<img src="img/image2.JPG" alt="">
-			<img src="img/image1.JPG" alt="">
-			<img src="img/image2.JPG" alt="">
+		<section class="blog-post-photos photos-wrapper--general">
+			<img src="../img/slide1.jpg" alt="" class="photo-view">
+			<img src="../img/slide2.jpg" alt="" class="photo-view">
+			<img src="../img/slide3.jpg" alt="" class="photo-view">
+			<img src="../img/slide1.jpg" alt="" class="photo-view">
+			<img src="../img/slide2.jpg" alt="" class="photo-view">
+			<img src="../img/slide3.jpg" alt="" class="photo-view">
 		</section>
+
+		<div class="body-overlay"></div>
+		<div class="image-viewer">
+			<img src="" alt="" class="current-image">
+			<span class="close-btn"></span>
+			<span class="left-controller"></span>
+			<span class="right-controller"></span>
+		</div>
 
 		<footer class="footer-not-main">
 			<div class="footer-wrapper">
@@ -46,6 +54,10 @@
 				</div>
 			</div>
 		</footer>
+
+		<script src="../scripts/jquery-2.1.4.min.js"></script>
+		<script src="../scripts/scrollTo.min.js"></script>
+		<script src="../scripts/script.js"></script>
 	<!-- </div> -->
 </body>
 </html>

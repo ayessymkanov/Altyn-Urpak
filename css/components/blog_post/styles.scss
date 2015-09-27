@@ -10,6 +10,7 @@ html {
 	background-image: url(../img/kids-pattern.jpg);
 	background-attachment: fixed;
 	background-size: 10%;
+	min-height: 100vh;
 }
 
 .overlay {
@@ -37,7 +38,6 @@ html {
 }
 
 .blog-post {
-	min-height: 100vh;
 	width: 100%;
 }
 
@@ -97,9 +97,16 @@ html {
 
 		&:nth-child(odd) {
 			margin-left: 0;
+
+			@media(max-width: 550px) {
+				margin-left: 20px;
+			}
 		}
 		&:nth-child(even) {
 			margin-right: 0;
+			@media(max-width: 550px) {
+				margin-right: 20px;
+			}
 		}
 	}
 }
