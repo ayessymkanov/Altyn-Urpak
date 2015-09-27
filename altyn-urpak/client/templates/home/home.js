@@ -1,6 +1,6 @@
 Template.home.rendered = function () {
-	$("body").removeClass("custom-body");
-	$("footer").removeClass("footer-not-main").addClass("footer-wraper");
+	$("body").removeClass("custom-body").removeClass("blog-post-body");
+	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wraper");
 
 	$(window).scroll(function() {
 
@@ -111,11 +111,18 @@ Template.home.events({
 	'click .mobile-navigation > li': function () {
 		$(this).closest('ul').removeClass('is-open');
 	},
-	'click .blog-section-nav__item': function (e) {
+	'click .js-blog-section-nav__item': function (e) {
 		e.preventDefault();
 		var $entry = $('.entries-holder'), $this = $(e.currentTarget);
 		$($this).addClass('active').siblings().removeClass('active');
 		$entry.eq($($this).index()).addClass('active').siblings().removeClass('active');
+	},
+	'click .js-schedule-nav-item': function (e) {
+		e.preventDefault();
+		var $this = $(e.currentTarget);
+		$this.addClass('active').siblings().removeClass('active');
+		$("."+$this.data("table")).addClass("active").siblings("table").removeClass("active");
+
 	}
 });
 
