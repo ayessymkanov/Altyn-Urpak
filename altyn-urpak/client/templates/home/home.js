@@ -1,6 +1,6 @@
 Template.home.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
-	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wrapper");
+	$("footer").removeClass("footer-not-main");
 
 	$(window).scroll(function() {
 
