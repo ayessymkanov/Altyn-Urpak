@@ -532,8 +532,8 @@ header {
       margin-bottom: 25px; } }
   @media (max-width: 500px) {
     .about-section__flex-wrapper__item {
-      -webkit-flex-basis: 200px;
-      flex-basis: 200px; } }
+      -webkit-flex-basis: 250px;
+      flex-basis: 250px; } }
 
 .about-us-passage {
   width: 45em;
@@ -904,7 +904,8 @@ footer {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 2500; }
 
 .close-btn {
   position: absolute;
@@ -946,8 +947,7 @@ footer {
   width: 40px;
   height: 60px;
   cursor: pointer;
-  z-index: 3000;
-  background-color: #68238e; }
+  z-index: 3000; }
 
 .left-controller {
   left: -50px; }
@@ -1096,10 +1096,10 @@ footer {
     text-align: center; }
     @media (max-width: 500px) {
       .timetable-item::before {
-        left: -100px; } }
+        left: -115px; } }
   @media (max-width: 500px) {
     .timetable-item {
-      margin-left: 0px; } }
+      margin-left: 5px; } }
 
 .custom-icon--timetable {
   color: #ED5858; }
