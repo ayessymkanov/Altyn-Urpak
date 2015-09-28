@@ -904,7 +904,8 @@ footer {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 2500; }
 
 .close-btn {
   position: absolute;
@@ -946,8 +947,7 @@ footer {
   width: 40px;
   height: 60px;
   cursor: pointer;
-  z-index: 3000;
-  background-color: #68238e; }
+  z-index: 3000; }
 
 .left-controller {
   left: -50px; }

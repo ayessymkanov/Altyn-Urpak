@@ -34,6 +34,7 @@
 	width: 90%;
 	height: 90%;
 	@include centerer_both;
+	z-index: 2500;
 }
 
 .close-btn {
@@ -86,7 +87,6 @@
 	height: 60px;
 	cursor: pointer;
 	z-index: 3000;
-	background-color: $primary;
 }
 
 .left-controller {
