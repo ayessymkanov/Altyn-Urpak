@@ -15,8 +15,6 @@
 	text-align: center;
 }
 
-
-
 .photo-section__title {
 	display: block;
 	padding-bottom: 40px;
@@ -34,11 +32,13 @@
 .photos-wrapper {
 	@include flex;
 	@include flex-wrap(wrap);
-	justify-content: -webkit-space-between;
+	-webkit-justify-content: space-between;
 	justify-content: space-between;
+	-webkit-align-content: center;
 	align-content: center;
 
 	@media(max-width: 768px) {
+		-webkit-justify-content: center;
 		justify-content: center;
 	}
 }

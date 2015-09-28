@@ -29,10 +29,12 @@
 
 .about-section__flex-wrapper {
 	@include flex;
+	-webkit-justify-content: space-between;
 	justify-content: space-between;
 
 	@media(max-width: 768px) {
 		@include flex-wrap(wrap);
+		-webkit-justify-content: space-around;
 		justify-content: space-around;
 	}
 }
@@ -45,8 +47,6 @@
 	background-color: white;
 	padding: 20px;
 	transition: all 0.3s;
-
-	
 
 	&:first-child {
 		color: #E0A212;

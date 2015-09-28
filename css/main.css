@@ -485,11 +485,13 @@ header {
 .about-section__flex-wrapper {
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between; }
   @media (max-width: 768px) {
     .about-section__flex-wrapper {
       -webkit-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-justify-content: space-around;
       justify-content: space-around; } }
 
 .about-section__flex-wrapper__item {
@@ -679,11 +681,13 @@ header {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: -webkit-space-between;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-content: center;
   align-content: center; }
   @media (max-width: 768px) {
     .photos-wrapper {
+      -webkit-justify-content: center;
       justify-content: center; } }
 
 .photo {
