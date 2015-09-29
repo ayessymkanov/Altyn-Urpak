@@ -7,7 +7,7 @@
 
 	var vh = $(this).height();
 	
-	if(scroll > vh / 2) {
+	if(scroll > vh / 3) {
 		$sideNav.addClass('seen');
 	} else {
 		$sideNav.removeClass('seen');
@@ -22,7 +22,7 @@
 	var $sideNavItem = $('.side-navigation__item');
 
 	if(scroll > $welcomeSection / 2) {
-		$sideNavItem.eq(0).addClass('active').siblings().removeClass('active');
+		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
 		$sideNavItem.css({
 			"border-color": "white"
 		});
@@ -30,14 +30,14 @@
 			"background-color": "white"
 		})
 	} if(scroll > $aboutSection + $welcomeSection - 100) {
-		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
+		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
 		$sideNavItem.css({
 			"border-color": "#68238e"
 		});
 	} if(scroll >$blogSection + $aboutSection + $welcomeSection - 100) {
-		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
-	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
 		$sideNavItem.eq(3).addClass('active').siblings().removeClass('active');
+	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
+		$sideNavItem.eq(4).addClass('active').siblings().removeClass('active');
 	}
 
 });
@@ -94,6 +94,13 @@
 (function() {
 
 	var $htmlBody = $('html, body');
+
+	$('.home-link').on('click', function(e) {
+		e.preventDefault();
+		$htmlBody.animate({
+			scrollTop: $('.welcome-section').offset().top
+		}, 'slow');
+	});
 
 	$('.about-link, .show-me').on('click', function(e) {
 		e.preventDefault();

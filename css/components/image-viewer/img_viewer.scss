@@ -24,6 +24,11 @@
 	object-fit: cover;
 	display: none;
 
+	@media(max-width: 768px) {
+		width: 100%;
+		height: 70%;
+	}
+
 	@media(max-width: 550px) {
 		width: 100%;
 		height: 50%;

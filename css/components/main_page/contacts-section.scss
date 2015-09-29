@@ -18,7 +18,7 @@
 		@include flex-wrap(wrap);
 	}
 }
-.text-container__address, .text-container__phone {
+.text-container__address, .text-container__phone, .text-container__social {
 	@include flex-basis(400px);
 	margin-bottom: 20px;
 }
@@ -55,4 +55,13 @@
 	@media(max-width: 365px) {
 		margin: 0 auto;
 	}
+}
+
+.social-link {
+	display: block;
+	position: relative;
+}
+
+a[href^="mailto"] {
+	color: $primary;
 }

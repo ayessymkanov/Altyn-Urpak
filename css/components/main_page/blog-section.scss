@@ -55,11 +55,7 @@
 		}
 	}
 
-	& span {
-		@media(max-width: 550px) {
-			display: none;
-		}
-	}
+	
 
 	& .blog-icon {
 		font-size: 20px;
@@ -68,6 +64,12 @@
 		@media(max-width: 550px) {
 			display: block;
 		}
+	}
+}
+
+.category-title {
+	@media(max-width: 550px) {
+		display: none;
 	}
 }
 .blog-section-nav__item.active {
