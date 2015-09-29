@@ -4,7 +4,7 @@ Template.negizgi.rendered = function () {
 };
 
 Template.negizgi.events({
-	'click .close-btn': function () {
+	'click .close-btn, .body-overlay': function () {
 		$(".body-overlay").add('.image-viewer').fadeOut("fast");
 		$(".current-image").attr("src","");
 	},
@@ -29,7 +29,7 @@ Template.negizgi.events({
 			selectedImgIndex = $imgLength - 1;
 		}
 	},
-	'click .right-controller': function () {
+	'click .right-controller, .current-image': function () {
 		var $bodyOverlay = $('.body-overlay'),
 			$imageViewer = $('.image-viewer'),
 			$currentImage = $('.current-image'),

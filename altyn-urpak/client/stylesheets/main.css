@@ -485,11 +485,13 @@ header {
 .about-section__flex-wrapper {
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between; }
   @media (max-width: 768px) {
     .about-section__flex-wrapper {
       -webkit-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-justify-content: space-around;
       justify-content: space-around; } }
 
 .about-section__flex-wrapper__item {
@@ -588,15 +590,16 @@ header {
     @media (max-width: 550px) {
       .blog-section-nav__item svg {
         display: inline; } }
-  @media (max-width: 550px) {
-    .blog-section-nav__item span {
-      display: none; } }
   .blog-section-nav__item .blog-icon {
     font-size: 20px;
     display: none; }
     @media (max-width: 550px) {
       .blog-section-nav__item .blog-icon {
         display: block; } }
+
+@media (max-width: 550px) {
+  .category-title {
+    display: none; } }
 
 .blog-section-nav__item.active {
   background-color: #68238e;
@@ -679,11 +682,13 @@ header {
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: -webkit-space-between;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-content: center;
   align-content: center; }
   @media (max-width: 768px) {
     .photos-wrapper {
+      -webkit-justify-content: center;
       justify-content: center; } }
 
 .photo {
@@ -725,7 +730,7 @@ header {
       -webkit-flex-wrap: wrap;
       flex-wrap: wrap; } }
 
-.text-container__address, .text-container__phone {
+.text-container__address, .text-container__phone, .text-container__social {
   -webkit-flex-basis: 400px;
   flex-basis: 400px;
   margin-bottom: 20px; }
@@ -755,6 +760,13 @@ header {
   @media (max-width: 365px) {
     .map {
       margin: 0 auto; } }
+
+.social-link {
+  display: block;
+  position: relative; }
+
+a[href^="mailto"] {
+  color: #68238e; }
 
 footer {
   background-image: url(../img/kids-pattern.jpg);
@@ -892,6 +904,10 @@ footer {
   z-index: 2000;
   object-fit: cover;
   display: none; }
+  @media (max-width: 768px) {
+    .image-viewer {
+      width: 100%;
+      height: 70%; } }
   @media (max-width: 550px) {
     .image-viewer {
       width: 100%;

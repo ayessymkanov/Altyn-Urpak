@@ -10,7 +10,7 @@ Template.home.rendered = function () {
 
 	var vh = $(this).height();
 	
-	if(scroll > vh / 2) {
+	if(scroll > vh / 3) {
 		$sideNav.addClass('seen');
 	} else {
 		$sideNav.removeClass('seen');
@@ -25,7 +25,7 @@ Template.home.rendered = function () {
 	var $sideNavItem = $('.side-navigation__item');
 
 	if(scroll > $welcomeSection / 2) {
-		$sideNavItem.eq(0).addClass('active').siblings().removeClass('active');
+		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
 		$sideNavItem.css({
 			"border-color": "white"
 		});
@@ -33,17 +33,18 @@ Template.home.rendered = function () {
 			"background-color": "white"
 		})
 	} if(scroll > $aboutSection + $welcomeSection - 100) {
-		$sideNavItem.eq(1).addClass('active').siblings().removeClass('active');
+		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
 		$sideNavItem.css({
 			"border-color": "#68238e"
 		});
 	} if(scroll >$blogSection + $aboutSection + $welcomeSection - 100) {
-		$sideNavItem.eq(2).addClass('active').siblings().removeClass('active');
-	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
 		$sideNavItem.eq(3).addClass('active').siblings().removeClass('active');
+	} if(scroll > $photoSection + $blogSection + $aboutSection + $welcomeSection - 200) {
+		$sideNavItem.eq(4).addClass('active').siblings().removeClass('active');
 	}
 
 });
+
 
 	var $slides = $('ul.slides li');
 	var $slidesNavItem = $('ul.slides-navigation li');
@@ -123,6 +124,12 @@ Template.home.events({
 		$this.addClass('active').siblings().removeClass('active');
 		$("."+$this.data("table")).addClass("active").siblings("table").removeClass("active");
 
+	},
+	'click .home-link': function (e) {
+		e.preventDefault();
+		$("html, body").animate({
+			scrollTop: $('.welcome-section').offset().top		
+		}, 'slow');
 	}
 });
 
@@ -139,4 +146,5 @@ Template.home.helpers({
 	paydaly: function () {
 		return Posts.find({category: 'Пайдалы мәлімет'}, {sort: {added: -1}});
 	},
+
 });
