@@ -4,7 +4,11 @@ Template.negizgi.rendered = function () {
 };
 
 Template.negizgi.events({
-	'click .close-btn, .body-overlay': function () {
+	'click .body-overlay': function () {
+		$(".body-overlay").add('.image-viewer').fadeOut("fast");
+		$(".current-image").attr("src","");
+	},
+	'click .close-btn': function () {
 		$(".body-overlay").add('.image-viewer').fadeOut("fast");
 		$(".current-image").attr("src","");
 	},
@@ -29,7 +33,7 @@ Template.negizgi.events({
 			selectedImgIndex = $imgLength - 1;
 		}
 	},
-	'click .right-controller, .current-image': function () {
+	'click .right-controller': function () {
 		var $bodyOverlay = $('.body-overlay'),
 			$imageViewer = $('.image-viewer'),
 			$currentImage = $('.current-image'),
@@ -41,5 +45,18 @@ Template.negizgi.events({
 			selectedImgIndex = 0;
 		}
 		
-	}
+	},
+	'click .current-image': function () {
+		var $bodyOverlay = $('.body-overlay'),
+			$imageViewer = $('.image-viewer'),
+			$currentImage = $('.current-image'),
+			$imgLength = $(".photos-wrapper--general .photo-view").length;
+
+		$currentImage.attr("src", $('.photo-view').eq(selectedImgIndex + 1)[0].src);
+		selectedImgIndex++;
+		if(selectedImgIndex === $imgLength - 1) {
+			selectedImgIndex = 0;
+		}
+		
+	},
 });
