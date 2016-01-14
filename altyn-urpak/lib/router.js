@@ -4,7 +4,7 @@ Router.configure({
 	loadingTemplate: 'loading',
 });
 
-var ADMIN_EMAIL = ["abzal.serekov@gmail.com"];
+var ADMIN_EMAIL = ["admin@altynurpak.kz"];
 
 Router.route('/admin', {
 	name: 'admin',
