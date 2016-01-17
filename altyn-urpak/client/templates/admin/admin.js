@@ -36,22 +36,27 @@ Template.admin.created = function () {
 
 Template.admin.events({
 	'change .myFileInput': function(event, template) {
+		$("#status").prepend("Жуктелуде...");
+		$("#status").empty();
+		var fileObj_id = "";
 		FS.Utility.eachFile(event, function (file) {
-			current_image = Images.insert(file, function (err, fileObj) {});
-			Tracker.nonreactive(function () {
+			current_image = Images.insert(file, function (err, fileObj) {
 				if (Session.get(Meteor.userId()) && Session.get(Meteor.userId()) === "yeah") {
 					var cnt = parseInt(Session.get("photos_count"));
 					cnt++;
-					Session.set("photo" + cnt, current_image);
+					Session.set("photo" + cnt, "/cfs/files/images/" + fileObj._id);
 					Session.set("photos_count", cnt);
 					console.log(cnt);
+					fileObj_id = fileObj._id;
 				} else {
 					Session.set(Meteor.userId(), "yeah");
 					Session.set("photos_count", 1);
-					Session.set("photo" + 1, current_image);
+					Session.set("photo" + 1, "/cfs/files/images/" + fileObj._id);
+					fileObj_id = fileObj._id;
 				}
 			});
 		});
+
    	},
    	'click #save': function () {
    		var url = [];
@@ -60,7 +65,7 @@ Template.admin.events({
    		if ((Session.get(Meteor.userId()) && Session.get(Meteor.userId()) === "yeah") && count) {
    			for (var i = 1; i <= count; i++) {
 				var file_info = Session.get("photo" + i);
-				url.push(Images.findOne({_id: file_info._id}).url(download=true));   			
+				url.push(file_info); 
    			}
    		}
 		var body = $("#body").val();
@@ -85,6 +90,9 @@ Template.admin.events({
 			Session.set(Meteor.userId(), "nope");
 			Session.set("photos_count", 0);
 			console.log(url);
+
+			location.reload();
+
 		}
    	},
    	'click #more-img': function (e) {
