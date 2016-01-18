@@ -1,0 +1,1 @@
+Gallery = new Mongo.Collection("gallery")
