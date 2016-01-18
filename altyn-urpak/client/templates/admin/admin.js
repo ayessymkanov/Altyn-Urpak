@@ -36,27 +36,23 @@ Template.admin.created = function () {
 
 Template.admin.events({
 	'change .myFileInput': function(event, template) {
-		$("#status").prepend("Жуктелуде...");
-		$("#status").empty();
-		var fileObj_id = "";
 		FS.Utility.eachFile(event, function (file) {
+			$("#status").text("Жуктелуде...");
 			current_image = Images.insert(file, function (err, fileObj) {
+				$("#status").text("");
 				if (Session.get(Meteor.userId()) && Session.get(Meteor.userId()) === "yeah") {
 					var cnt = parseInt(Session.get("photos_count"));
 					cnt++;
 					Session.set("photo" + cnt, "/cfs/files/images/" + fileObj._id);
 					Session.set("photos_count", cnt);
 					console.log(cnt);
-					fileObj_id = fileObj._id;
 				} else {
 					Session.set(Meteor.userId(), "yeah");
 					Session.set("photos_count", 1);
 					Session.set("photo" + 1, "/cfs/files/images/" + fileObj._id);
-					fileObj_id = fileObj._id;
 				}
 			});
 		});
-
    	},
    	'click #save': function () {
    		var url = [];
@@ -100,8 +96,6 @@ Template.admin.events({
    		$("#photkalar").append("<input name='photo_src' type='file' class='myFileInput'>");
    	},
 	'change .myFileInput-gallery': function(event, template) {
-		$("#status-gallery").prepend("Жуктелуде...");
-		$("#status-gallery").empty();
 		var fileObj_id = "";
 		FS.Utility.eachFile(event, function (file) {
 			current_image = Images.insert(file, function (err, fileObj) {
@@ -118,7 +112,10 @@ Template.admin.events({
 					Session.set("photo-gallery" + 1, "/cfs/files/images/" + fileObj._id);
 					fileObj_id = fileObj._id;
 				}
+				$("#status-gallery").text("Жуктелуде...");
 			});
+			$("#status-gallery").text("");
+
 		});
 
    	},

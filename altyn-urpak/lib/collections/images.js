@@ -20,6 +20,6 @@ Images = new FS.Collection("images", {
     	allow: {
       		contentTypes: ['image/*'] //allow only images in this FS.Collection
     	},
-    	maxSize: 5 * 1024 * 1024,	// in bytes
+    	maxSize: 100 * 1024 * 1024,	// in bytes
   	}
 });
