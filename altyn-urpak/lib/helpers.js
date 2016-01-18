@@ -1,3 +1,4 @@
+
 moment.locale('kz', {
     months : "қаңтар_ақпан_наурыз_сәуір_мамыр_маусым_шілде_тамыз_қыркүйек_қазан_қараша_желтоқсан".split("_"),
     monthsShort : "қант._ақп._наур._сәуір_мамыр_маус._шілд._тамыз_қырк._қаз._қар._желт.".split("_"),
@@ -62,4 +63,22 @@ UI.registerHelper('formatDateFromNow', function(date) {
 });
 UI.registerHelper('formatDate', function(date) {
 	return moment(date).format('MM-DD-YYYY');
+});
+
+UI.registerHelper('describe', function(body) {
+    var description = "";
+    for (var i = 0; i < Math.min(body.length, 150); i++) {
+        if (body[i] == '<') {
+            while (body[i] !== '>') {
+                i++;
+            }
+            i++;
+        }
+        if (body[i] === "'")
+            body[i] = '"';
+        if (body[i] === "\n")
+            body[i] = " ";
+        description += body[i];
+    }       
+    return description;
 });

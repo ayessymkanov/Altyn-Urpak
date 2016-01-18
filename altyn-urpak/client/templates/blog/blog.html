@@ -16,6 +16,8 @@
 		<div class="post-content">
 			<h1 class="blog-post-title">{{title}}</h1>
 			{{{body}}}
+			<br/>
+			<a href="http://vk.com/share.php?url=http://altynurpak.kz{{pathFor 'blog' _id}}&title={{title}}&description={{describe body}}&noparse=false?" target="_blank"><img src="/img/vk.png"/>Бөлісу</a>
 		</div>
 	</section>
 
@@ -36,6 +38,6 @@
 	</div>
 	<script type="text/javascript">
 		$("title").text("{{title}} | Алтын Ұрпақ балабақшасы");
-		$("meta[name='description']").attr("content", '{{description}}');
+		// $("meta[name='description']").attr("content", '{{description}}');
 	</script>
 </template>
