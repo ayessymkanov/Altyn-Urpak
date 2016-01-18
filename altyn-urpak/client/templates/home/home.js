@@ -2,6 +2,10 @@ Template.home.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
 	$("footer").removeClass("footer-not-main");
 
+	$("title").text("Алтын Ұрпақ балабақшасы");
+	$("meta[name='description']").attr("content", "“Алтын ұрпақ Астана” мекемесі балабақша 2-6 жас аралығында балаларды қабылдайды. Егер сіз балаңыздың жайлы ортада жанына жақын жандардан заманауи білім мен ұлттық құндылықтар ұштастырылған тәлім-тәрбие алғанын қаласаңыз біздің балабақшамыз сіздің көңіліңізден шығады.");
+
+
 	$(window).scroll(function() {
 
 	var $sideNav = $('.side-navigation');

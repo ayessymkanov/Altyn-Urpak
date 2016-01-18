@@ -31,6 +31,7 @@ cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.0.5
+coffeescript@1.0.6
 dburles:mongo-collection-instances@0.3.4
 ddp@1.1.0
 deps@1.0.7
@@ -55,6 +56,7 @@ iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
 jaredmartin:editor@0.0.3
+joshowens:shareit@0.3.1
 jquery@1.11.3_2
 json@1.0.3
 lai:collection-extensions@0.1.4
@@ -88,6 +90,7 @@ session@1.1.0
 sha@1.0.3
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+spiderable@1.0.7
 srp@1.0.3
 templating@1.1.1
 tomi:upload-jquery@2.1.8

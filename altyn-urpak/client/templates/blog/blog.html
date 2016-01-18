@@ -24,10 +24,9 @@
 
 	<section class="blog-post-photos photos-wrapper--general">
 		{{#each imgs}}
-			<img src="{{this}}" alt="" class="photo-view" />
+			<img src="{{this}}" alt="{{title}}" class="photo-view" />
 		{{/each}}
 	</section>
-
 	<div class="body-overlay"></div>
 	<div class="image-viewer">
 		<img src="" alt="" class="current-image">
@@ -35,5 +34,8 @@
 		<span class="left-controller"></span>
 		<span class="right-controller"></span>
 	</div>
-
+	<script type="text/javascript">
+		$("title").text("{{title}} | Алтын Ұрпақ балабақшасы");
+		$("meta[name='description']").attr("content", '{{description}}');
+	</script>
 </template>

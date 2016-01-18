@@ -1,6 +1,7 @@
 Template.allblogs.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
 	$("footer").addClass("footer-not-main-1");
+	$("title").text("Барлық блогтар | Алтын Ұрпақ балабақшасы");
 }
 
 Template.allblogs.helpers({

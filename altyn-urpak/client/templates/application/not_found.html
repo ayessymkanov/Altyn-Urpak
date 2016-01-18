@@ -1,4 +1,18 @@
 <template name="notFound">
-	<h1 class="error-title">404</h1>
-	<span class="error-content">Кешіріңіз, бұл бет табылмады :(</span>
+	<header class="header-not-main">
+		<div class="general-container general-container--header">
+			<a href="{{pathFor 'home'}}" class="logo logo-not-main">"Алтын Ұрпақ" <br> балабақшасы</a>
+		</div>
+	</header>
+	<div class="overlay"></div>
+
+	<section class="custom-content">
+		<div class="custom-icon custom-item--services custom-content__item">
+			<span>Error 404: Кешіріңіз, бұл бет табылмады :(</span>
+		</div>
+		<ul class="custom-list custom-content__item">
+			<li class="custom-item"><a href="/">Басты бет</a></li>
+		</ul>
+	</section>
+
 </template>

@@ -1,6 +1,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- <url>
-<loc>http://openstats.kz/</loc>
+<url>
+<loc>http://altynurpak.kz/</loc>
 <changefreq>weekly</changefreq>
 </url>
- --></urlset>
+<url>
+<loc>http://altynurpak.kz/all-blogs</loc>
+<changefreq>weekly</changefreq>
+</url>
+<url>
+<loc>http://altynurpak.kz/erekshelikterimiz</loc>
+<changefreq>weekly</changefreq>
+</url>
+<url>
+<loc>http://altynurpak.kz/kyzmetterimiz</loc>
+<changefreq>weekly</changefreq>
+</url>
+<url>
+<loc>http://altynurpak.kz/kun-tartibi</loc>
+<changefreq>weekly</changefreq>
+</url>
+<url>
+<loc>http://altynurpak.kz/sabak-kestesi</loc>
+<changefreq>weekly</changefreq>
+</url>
+</urlset>
