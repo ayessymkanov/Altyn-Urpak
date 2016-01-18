@@ -99,6 +99,52 @@ Template.admin.events({
    		e.preventDefault();
    		$("#photkalar").append("<input name='photo_src' type='file' class='myFileInput'>");
    	},
+	'change .myFileInput-gallery': function(event, template) {
+		$("#status-gallery").prepend("Жуктелуде...");
+		$("#status-gallery").empty();
+		var fileObj_id = "";
+		FS.Utility.eachFile(event, function (file) {
+			current_image = Images.insert(file, function (err, fileObj) {
+				if (Session.get(Meteor.userId() + "gallery") && Session.get(Meteor.userId() + "gallery") === "yeah-gallery") {
+					var cnt = parseInt(Session.get("photos_count-gallery"));
+					cnt++;
+					Session.set("photo-gallery" + cnt, "/cfs/files/images/" + fileObj._id);
+					Session.set("photos_count-gallery", cnt);
+					console.log(cnt);
+					fileObj_id = fileObj._id;
+				} else {
+					Session.set(Meteor.userId() + "gallery", "yeah-gallery");
+					Session.set("photos_count-gallery", 1);
+					Session.set("photo-gallery" + 1, "/cfs/files/images/" + fileObj._id);
+					fileObj_id = fileObj._id;
+				}
+			});
+		});
+
+   	},
+   	'click #save-gallery': function () {
+   		var url = [];
+   		var count = Session.get("photos_count-gallery");
+   		console.log(count);
+   		if ((Session.get(Meteor.userId() + "gallery") && Session.get(Meteor.userId() + "gallery") === "yeah-gallery") && count) {
+   			for (var i = 1; i <= count; i++) {
+				var file_info = Session.get("photo-gallery" + i);
+				url.push(file_info); 
+   			}
+   		}
+		Gallery.insert({
+			added: new Date(),
+			imgs: url,
+		});
+		Session.set(Meteor.userId()+"gallery", "nope");
+		Session.set("photos_count-gallery", 0);
+		console.log(url);
+		location.reload();
+	},
+   	'click #more-img-gallery': function (e) {
+   		e.preventDefault();
+   		$("#photkalar-gallery").append("<input name='photo_src' type='file' class='myFileInput-gallery'>");
+   	},
    	'click .remove': function (e) {
    		e.preventDefault();
    		var $this = $(e.currentTarget);

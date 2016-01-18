@@ -22,6 +22,10 @@ Router.route('/blog/:_id', {
 	},
 });
 
+Router.route('/all-blogs', {
+	name: 'allblogs',
+});
+
 Router.route('/erekshelikterimiz', {
 	name: 'uniqueness',
 });

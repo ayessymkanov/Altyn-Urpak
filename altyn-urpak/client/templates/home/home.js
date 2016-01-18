@@ -135,16 +135,18 @@ Template.home.events({
 
 Template.home.helpers({
 	janaliktar: function () {
-		return Posts.find({category: 'Жаңалықтар'}, {sort: {added: -1}});
+		return Posts.find({category: 'Жаңалықтар'}, {sort: {added: -1}, limit: 5});
 	},
 	'ataanalar': function () {
-		return Posts.find({category: 'Ата-аналар үшін'}, {sort: {added: -1}});
+		return Posts.find({category: 'Ата-аналар үшін'}, {sort: {added: -1}, limit: 5});
 	},
 	habarlandyru: function () {
-		return Posts.find({category: 'Хабарландыру'}, {sort: {added: -1}});
+		return Posts.find({category: 'Хабарландыру'}, {sort: {added: -1}, limit: 5});
 	},
 	paydaly: function () {
-		return Posts.find({category: 'Пайдалы мәлімет'}, {sort: {added: -1}});
+		return Posts.find({category: 'Пайдалы мәлімет'}, {sort: {added: -1}, limit: 5});
 	},
-
+	gallery: function () {
+		return Gallery.find({});
+	}
 });

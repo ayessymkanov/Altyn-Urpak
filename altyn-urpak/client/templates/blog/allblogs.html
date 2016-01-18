@@ -1,79 +1,16 @@
-<template name="home">
+<template name="allblogs">
+<style type="text/css">
+.footer-not-main-1 {
+  width: 100%;
+  bottom: 0;
+  z-index: 200; }
 
-	<div class="side-navigation">
-		<a href="#" class="side-navigation__item home-link" data-content="Басты бет"></a>
-		<a href="#" class="side-navigation__item about-link" data-content="Біз туралы"></a>
-		<a href="#" class="side-navigation__item news-link" data-content="Жаңалықтар"></a>
-		<a href="#" class="side-navigation__item photos-link" data-content="Фотолар"></a>
-		<a href="#" class="side-navigation__item contacts-link" data-content="Байланыс"></a>
-	</div>
-	
-	<header>
+</style>
+	<header class="header-not-main">
 		<div class="general-container general-container--header">
-			<a href="#" class="logo">"Алтын Ұрпақ" <br> балабақшасы</a>
-			<ul class="navigation">
-				<a href="#" class="navigation__item about-link">Біз туралы</a>
-				<a href="#" class="navigation__item news-link">Блог пен жаңалықтар</a>
-				<a href="#" class="navigation__item photos-link">Фотолар</a>
-				<a href="#" class="navigation__item contacts-link">Байланыс</a>
-			</ul>
-			<a href="" class="menu-btn"><span></span></a>
-		</div>
-
-		<div class="mobile-nav-wrapper">
-			<div class="general-container">
-				<ul class="mobile-navigation">
-					<li><a href="#" class="about-link">Біз туралы</a></li>
-					<li><a href="#" class="news-link">Блог пен жаңалықтар</a></li>
-					<li><a href="#" class="photos-link">Фотолар</a></li>
-					<li><a href="#" class="contacts-link">Байланыс</a></li>
-				</ul>
-			</div>
+			<a href="{{pathFor 'home'}}" class="logo logo-not-main">"Алтын Ұрпақ" <br> балабақшасы</a>
 		</div>
 	</header>
-
-	<section class="welcome-section">
-		<ul class="slides">
-			<li class="slides__item active">
-				<span class="slides__item__title">&ldquo;Бала өмірдің сәні, тіршіліктің мәні.&rdquo;</span>
-			</li>
-			<li class="slides__item">
-				<span class="slides__item__title">&ldquo;Адам өмірі қамшы сабындай қысқа екен, досы көп, ұрпақ тәрбиелеген ұтады екен&rdquo;</span>
-			</li>
-			<li class="slides__item">
-				<span class="slides__item__title">&ldquo;Бала өмірдің гүлі, көңілдің нұры&rdquo;</span>
-			</li>
-		</ul>
-
-		<span class="show-me"></span>
-	</section>
-
-	<section class="about-section">
-		<div class="about-section__wrapper">
-			<div class="general-container general-container--about">
-				<h1 class="about-section__title">Біз туралы</h1>
-				<p class="about-us-passage"><strong>&ldquo;Алтын ұрпақ Астана&rdquo;</strong> мекемесі балабақша  <strong>2-6 жас аралығында балаларды қабылдайды.</strong><br>Егер сіз балаңыздың жайлы ортада жанына жақын жандардан заманауи білім мен ұлттық құндылықтар ұштастырылған тәлім-тәрбие алғанын қаласаңыз біздің балабақшамыз сіздің көңіліңізден шығады.</p>
-				<div class="about-section__flex-wrapper">
-					<a href="{{pathFor 'uniqueness'}}" class="about-section__flex-wrapper__item">
-						<img src="/img/icons/unique.svg" alt="">
-						<span>Ерекшеліктеріміз</span>
-					</a>
-					<a href="{{pathFor 'services'}}" class="about-section__flex-wrapper__item">
-						<img src="/img/icons/services.svg" alt="">
-						<span>Қызметтеріміз</span>
-					</a>
-					<a href="{{pathFor 'timetable'}}" class="about-section__flex-wrapper__item">
-						<img src="/img/icons/calendar-week.svg" alt="">
-						<span>Күн тәртібі</span>
-					</a>
-					<a href="{{pathFor 'schedule'}}" class="about-section__flex-wrapper__item">
-						<img src="/img/icons/books.svg" alt="">
-						<span>Сабақтар кестесі</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="blog-section">
 		<div class="blog-section-wrapper">
@@ -151,7 +88,6 @@
 							<a href="{{pathFor 'blog' this._id}}" class="read-more-btn">Оқу</a>
 						</div>
 					{{/each}}
-					<a href="{{pathFor 'allblogs'}}" class="more-entries-btn">Барлығы</a>
 				</div>
 				<div class="entries-holder">
 					{{#each habarlandyru}}
@@ -161,7 +97,6 @@
 							<a href="{{pathFor 'blog' this._id}}" class="read-more-btn">Оқу</a>
 						</div>
 					{{/each}}
-					<a href="{{pathFor 'allblogs'}}" class="more-entries-btn">Барлығы</a>
 				</div>
 				<div class="entries-holder">
 					{{#each ataanalar}}
@@ -171,7 +106,6 @@
 							<a href="{{pathFor 'blog' this._id}}" class="read-more-btn">Оқу</a>
 						</div>
 					{{/each}}
-					<a href="{{pathFor 'allblogs'}}" class="more-entries-btn">Барлығы</a>
 				</div>
 				<div class="entries-holder">
 					{{#each paydaly}}
@@ -181,65 +115,9 @@
 							<a href="{{pathFor 'blog' this._id}}" class="read-more-btn">Оқу</a>
 						</div>
 					{{/each}}
-					<a href="{{pathFor 'allblogs'}}" class="more-entries-btn">Барлығы</a>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="photo-section">
-		<div class="photo-section-wrapper">
-			<div class="general-container general-container--photo">
-				<h1 class="photo-section__title">Фотолар</h1>
-				<div class="photos-wrapper--general photos-wrapper">
-					<img src="/img/slide2.jpg" alt="" class="photo photo-view">
-					<img src="/img/slide1.jpg" alt="" class="photo photo-view">
-					<img src="/img/slide3.jpg" alt="" class="photo photo-view">
-					{{#each gallery}}
-						{{#each this.imgs}}
-							<img src="{{this}}" alt="" class="photo photo-view">
-						{{/each}}
-					{{/each}}
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="contacts-section">
-		<div class="contacts-section-wrapper">
-			<div class="general-container">
-				<div class="text-container">
-					<div class="text-container__address">
-						<img class="contact-icon" src="/img/icons/address.svg" alt="">
-						<div class="text-holder">
-							<span class="contact-title">Мекен жайымыз:</span>
-							<span>Астана қ, Юговосток ауданы, <br> Жанкент көшесі 23</span>
-						</div>
-					</div>
-					<div class="text-container__phone">
-						<img class="contact-icon" src="/img/icons/phone.svg" alt="">
-						<div class="text-holder">
-							<span class="contact-title">Байланыс телефондарымыз:</span>
-							<span>8 (7172) 49-00-42</span>
-							<span>8 (747) 892-17-61</span>
-						</div>
-					</div>
-					<div class="text-container__social">
-						<img class="contact-icon" src="/img/icons/email.svg" alt="">
-						<div class="text-holder">
-							<span><a href="mailto:altynurpak_ast@gmail.com" class="social-link">altynurpak_ast@gmail.com</a></span>
-							<span><a href="http://vk.com/id325755621" class="social-link" target="_blank">vk.com</a></span>
-							<span><a href="https://instagram.com/altynurpak.ast/" class="social-link" target="_blank">instagram.com</a></span>
-						</div>
-					</div>
-				</div>
-
-				<div class="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.195025685511!2d71.51119166112913!3d51.139894126819975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424583debe38b08f%3A0xa648ec27ced273bf!2sZhankent+St%2C+Astana+020000!5e0!3m2!1sen!2skz!4v1441642725622" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</section>
-
 
 </template>
