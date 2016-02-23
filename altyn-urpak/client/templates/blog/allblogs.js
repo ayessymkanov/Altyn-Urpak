@@ -1,7 +1,11 @@
+main_name = function () {
+	return Home.findOne({place: 'title_usti'}).value + "<br/>" + Home.findOne({place: 'title_asti'}).value;
+}
+
 Template.allblogs.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
 	$("footer").empty();
-	$("title").text("Барлық блогтар | Алтын Ұрпақ балабақшасы");
+	$("title").text("Барлық блогтар | " + main_name());
 }
 
 Template.allblogs.helpers({

@@ -7,7 +7,7 @@
 
 	<header class="header-not-main">
 		<div class="general-container general-container--header">
-			<a href="{{pathFor 'home'}}" class="logo logo-not-main">"Алтын Ұрпақ" <br> балабақшасы</a>
+			<a href="{{pathFor 'home'}}" class="logo logo-not-main">{{{title_usti}}} <br> {{{title_asti}}}</a>
 		</div>
 	</header>
 	<div class="overlay"></div>
@@ -37,7 +37,8 @@
 		<span class="right-controller"></span>
 	</div>
 	<script type="text/javascript">
-		$("title").text("{{title}} | Алтын Ұрпақ балабақшасы");
-		// $("meta[name='description']").attr("content", '{{description}}');
+		$(document).ready(function () {
+			$("title").text("{{title}} | " + '{{{title_usti}}}{{{title_asti}}}'.split('"').join(""));
+		});
 	</script>
 </template>

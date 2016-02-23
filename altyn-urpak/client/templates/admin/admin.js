@@ -15,12 +15,36 @@ Template.admin.helpers({
 	},
 	equals: function(v1, v2) {
         return (v1 === v2);
-    }
+    },
+	title_usti: function () {
+		return Home.findOne({place: 'title_usti'}).value;
+	},
+	title_asti: function () {
+		return Home.findOne({place: 'title_asti'}).value;
+	},
+	quote_1: function () {
+		return Home.findOne({place: 'quote_1'}).value;
+	},
+	quote_2: function () {
+		return Home.findOne({place: 'quote_2'}).value;
+	},
+	quote_3: function () {
+		return Home.findOne({place: 'quote_3'}).value;
+	},
+	about_us: function () {
+		return Home.findOne({place: 'about_us'}).value;
+	},
+
 });
 
 Template.admin.rendered = function () {
 	$("body").removeClass("custom-body").removeClass("blog-post-body");
 	$("footer").removeClass("footer-not-main").removeClass("blog-post-footer").addClass("footer-wrapper");
+
+	$("#title_usti").val(Home.findOne({place: 'title_usti'}).value);
+	$("#title_asti").val(Home.findOne({place: 'title_asti'}).value);
+	$("#about_us").val(Home.findOne({place: 'about_us'}).value);
+
 };
 
 Template.admin.created = function () {
@@ -149,5 +173,29 @@ Template.admin.events({
    		console.log($this);
    		console.log(_id);
    		Posts.remove({_id: _id});
-   	} 
+   	},
+   	'click #save_title_usti': function () {
+		var title_usti = Home.findOne({place: 'title_usti'})._id;
+   		$("#saktaldy_title_usti").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_title_usti").text("");
+   		}, 3000);
+   		return Home.update({_id: title_usti}, {$set: {value: $("#title_usti").val()}});
+   	}, 
+   	'click #save_title_asti': function () {
+		var title_asti = Home.findOne({place: 'title_asti'})._id;
+   		$("#saktaldy_title_asti").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_title_asti").text("");
+   		}, 3000);
+   		return Home.update({_id: title_asti}, {$set: {value: $("#title_asti").val()}});
+   	}, 
+   	'click #save_about_us': function () {
+		var about_us = Home.findOne({place: 'about_us'})._id;
+   		$("#saktaldy_about_us").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_about_us").text("");
+   		}, 3000);
+   		return Home.update({_id: about_us}, {$set: {value: $("#about_us").val()}});
+   	}, 
 });

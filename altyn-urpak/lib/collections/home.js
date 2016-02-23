@@ -1,0 +1,1 @@
+Home = new Mongo.Collection("home")

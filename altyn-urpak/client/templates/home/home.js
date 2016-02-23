@@ -152,5 +152,26 @@ Template.home.helpers({
 	},
 	gallery: function () {
 		return Gallery.find({});
-	}
+	},
+
+	title_usti: function () {
+		return Home.findOne({place: 'title_usti'}).value;
+	},
+	title_asti: function () {
+		return Home.findOne({place: 'title_asti'}).value;
+	},
+	quote_1: function () {
+		return Home.findOne({place: 'quote_1'}).value;
+	},
+	quote_2: function () {
+		return Home.findOne({place: 'quote_2'}).value;
+	},
+	quote_3: function () {
+		return Home.findOne({place: 'quote_3'}).value;
+	},
+	about_us: function () {
+		return Home.findOne({place: 'about_us'}).value;
+	},
+
+
 });

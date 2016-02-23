@@ -27,3 +27,42 @@ if (Categories.find().count() === 0) {
 			name: categories[i],
 		});
 }
+
+if (Home.find().count() === 0) {
+	
+	// title
+	Home.insert({
+		place: 'title_usti',
+		value: '&ldquo;Алтын Ұрпақ&rdquo;',
+	});
+	Home.insert({
+		place: 'title_asti',
+		value: 'балабақшасы',
+	});
+
+
+	// quotes
+	Home.insert({
+		place: 'quote_1',
+		value: '&ldquo;Бала өмірдің сәні, тіршіліктің мәні.&rdquo;',
+	});
+	Home.insert({
+		place: 'quote_2',
+		value: '&ldquo;Адам өмірі қамшы сабындай қысқа екен, досы көп, ұрпақ тәрбиелеген ұтады екен&rdquo;',
+	});
+	Home.insert({
+		place: 'quote_3',
+		value: '&ldquo;Бала өмірдің гүлі, көңілдің нұры&rdquo;',
+	});
+
+	Home.insert({
+		place: 'about_us',
+		value: '<strong>&ldquo;Алтын ұрпақ Астана&rdquo;</strong> мекемесі балабақша  <strong>2-6 жас аралығында балаларды қабылдайды.</strong><br>Егер сіз балаңыздың жайлы ортада жанына жақын жандардан заманауи білім мен ұлттық құндылықтар ұштастырылған тәлім-тәрбие алғанын қаласаңыз біздің балабақшамыз сіздің көңіліңізден шығады.',
+	});
+
+
+
+
+
+
+}
