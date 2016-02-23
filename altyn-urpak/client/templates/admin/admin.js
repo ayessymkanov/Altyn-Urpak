@@ -43,6 +43,9 @@ Template.admin.rendered = function () {
 
 	$("#title_usti").val(Home.findOne({place: 'title_usti'}).value);
 	$("#title_asti").val(Home.findOne({place: 'title_asti'}).value);
+	$("#quote_1").val(Home.findOne({place: 'quote_1'}).value);
+	$("#quote_2").val(Home.findOne({place: 'quote_2'}).value);
+	$("#quote_3").val(Home.findOne({place: 'quote_3'}).value);
 	$("#about_us").val(Home.findOne({place: 'about_us'}).value);
 
 };
@@ -197,5 +200,29 @@ Template.admin.events({
 	   		$("#saktaldy_about_us").text("");
    		}, 3000);
    		return Home.update({_id: about_us}, {$set: {value: $("#about_us").val()}});
+   	}, 
+   	'click #save_quote_1': function () {
+		var quote_1 = Home.findOne({place: 'quote_1'})._id;
+   		$("#saktaldy_quote_1").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_quote_1").text("");
+   		}, 3000);
+   		return Home.update({_id: quote_1}, {$set: {value: $("#quote_1").val()}});
+   	}, 
+   	'click #save_quote_2': function () {
+		var quote_2 = Home.findOne({place: 'quote_2'})._id;
+   		$("#saktaldy_quote_2").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_quote_2").text("");
+   		}, 3000);
+   		return Home.update({_id: quote_2}, {$set: {value: $("#quote_2").val()}});
+   	}, 
+   	'click #save_quote_3': function () {
+		var quote_3 = Home.findOne({place: 'quote_3'})._id;
+   		$("#saktaldy_quote_3").text("Сакталды!");
+   		Meteor.setTimeout(function () {
+	   		$("#saktaldy_quote_3").text("");
+   		}, 3000);
+   		return Home.update({_id: quote_3}, {$set: {value: $("#quote_3").val()}});
    	}, 
 });
